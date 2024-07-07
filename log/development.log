@@ -38,3 +38,12 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 402)
 
 
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, and [36mCHAT_APP_DATABASE_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, and [36mCHAT_APP_DATABASE_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, and [36mCHAT_APP_DATABASE_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
