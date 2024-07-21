@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_11_071256) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_21_033114) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,6 +33,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_11_071256) do
     t.index ["admin_id"], name: "index_conversations_on_admin_id"
   end
 
+  create_table "jwt_denylists", force: :cascade do |t|
+    t.string "jti"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["jti"], name: "index_jwt_denylists_on_jti"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.string "content", null: false
     t.datetime "deleted_at"
@@ -49,13 +56,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_11_071256) do
     t.string "username"
     t.datetime "birth_date"
     t.datetime "deleted_at"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "jti"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["jti"], name: "index_users_on_jti"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

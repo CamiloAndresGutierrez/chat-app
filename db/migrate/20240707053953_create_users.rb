@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :username
       t.datetime :birth_date
       t.datetime :deleted_at
-      t.boolean :active
+      t.boolean :active, default: true
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
