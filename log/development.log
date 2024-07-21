@@ -6814,3 +6814,11 @@ Filter chain halted as :verify_signed_out_user rendered or redirected
 Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1916)
 
 
+Started GET "/api/v1/users" for ::1 at 2024-07-20 23:34:09 -0500
+Processing by Api::V1::UserController#show as */*
+  Parameters: {"user"=>{"email"=>"camilo1999@gmail.com", "password"=>"[FILTERED]", "name"=>"Camilo G"}}
+  [1m[36mUser Load (39.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/user_controller.rb:6:in `show'
+Completed 200 OK in 46ms (Views: 0.4ms | ActiveRecord: 52.8ms | Allocations: 4613)
+
+
