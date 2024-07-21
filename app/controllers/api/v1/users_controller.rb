@@ -1,6 +1,6 @@
 module Api
     module V1
-        class UserController < ApplicationController
+        class UsersController < ApplicationController            
             def show
                 user = User.all
                 render json: user.to_json

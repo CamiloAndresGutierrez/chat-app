@@ -19,10 +19,21 @@ module ChatApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
-    # Please, add to the `ignore` list any other `lib` subdirectories that do
-    # not contain `.rb` files, or that should not be reloaded or eager loaded.
-    # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w(assets tasks))
+    def encode_token(payload)
+      JWT.encode(payload, Rails.application.credentials.devise_jwt_secret_key!) 
+    end
+
+    def decoded_token
+        header = request.headers['Authorization']
+        if header
+            token = header.split(" ")[1]
+            begin
+                JWT.decode(token, Rails.application.credentials.devise_jwt_secret_key!)
+            rescue JWT::DecodeError
+                nil
+            end
+        end
+    end
 
   end
 end

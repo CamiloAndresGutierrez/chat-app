@@ -1,15 +1,22 @@
 # frozen_string_literal: true
 
-class Users::SessionsController < Devise::SessionsController
-  # before_action :configure_sign_in_params, only: [:create]
+class SessionsController < Devise::SessionsController
   respond_to :json
+
+  def create
+    super
+  end
+
+  def destroy
+    super
+  end
 
   private
   def respond_with(current_user, _opts = {})
     render json: {
-      status: { 
+      status: {
         code: 200, message: 'Logged in successfully.',
-        data: { user: UserSerializer.new(current_user).serializable_hash[:data][:attributes] }
+        data: { user: UsersSerializer.new(current_user).serializable_hash[:data][:attributes] }
       }
     }, status: :ok
   end
