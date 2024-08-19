@@ -12,13 +12,18 @@ Rails.application.routes.draw do
 
         get '/conversations' => 'conversations#show'
         post '/conversations' => 'conversations#new'
-        post '/:conversation_id/conversations' => 'conversations#index'
+        get '/conversations/:conversation_id' => 'conversations#index'
+        post '/conversations/:conversation_id/message' => 'messages#new'
+        get '/conversations/:conversation_id/message' => 'messages#show'
 
-        get '/:conversation_id/message' => 'messages#show'
-        post '/:conversation_id/message' => 'messages#new'
       end
     end
 
+    mount ActionCable.server => "/cable"
+
+    resources :users
+    resources :messages
+    resources :channels
   end
 
 

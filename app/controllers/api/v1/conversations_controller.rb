@@ -42,8 +42,8 @@ module Api::V1
     end
 
     def index
-      conversation = Conversation.find_by(id: params[:conversation_id])
-      raise 'User has no access to this conversation.' if conversation.conversation_participants.find_by(user_id: current_user.id).nil?
+      conversation = current_user.conversations.find_by(id: params[:conversation_id])
+      raise 'User has no access to this conversation.' unless conversation.present?
 
       render json: {success: true, data: ConversationSerializer.new(conversation, scope: current_user.id) }, status: :ok
     end
