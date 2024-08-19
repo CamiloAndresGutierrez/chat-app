@@ -1,0 +1,8 @@
+{
+    "ruby.useBundler": true,
+    "ruby.useLanguageServer": true,
+    "ruby.lint": {
+        "rubocop": true
+    },
+    "ruby.rubocop.useBundler": true
+}

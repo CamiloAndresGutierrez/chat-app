@@ -8,5 +8,12 @@ class User < ApplicationRecord
   has_many :conversation_participants
   has_many :conversations, through: :conversation_participants
   has_many :messages
+
+  def contacts
+    ConversationParticipant
+      .where(conversation_id: conversations.select(:id))
+      .where.not(user_id: id)
+      .includes(:user)
+      .map(&:user)
+  end
 end
-  

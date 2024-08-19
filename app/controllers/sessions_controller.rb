@@ -14,10 +14,8 @@ class SessionsController < Devise::SessionsController
   private
   def respond_with(current_user, _opts = {})
     render json: {
-      status: {
-        code: 200, message: 'Logged in successfully.',
-        data: { user: UsersSerializer.new(current_user).serializable_hash[:data][:attributes] }
-      }
+      success: true,
+      data: UserSerializer.new(current_user)
     }, status: :ok
   end
 
