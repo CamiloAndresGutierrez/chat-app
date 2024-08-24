@@ -5,27 +5,22 @@ Rails.application.routes.draw do
     post '/login' => 'sessions#create'
     delete '/logout' => 'sessions#destroy'
     post '/sign_up' => 'registrations#create'
-
-    namespace :api, defaults: {format: 'json'} do 
-      namespace :v1 do
-        get 'users/get_contacts' => 'users#get_contacts'
-
-        get '/conversations' => 'conversations#show'
-        post '/conversations' => 'conversations#new'
-        get '/conversations/:conversation_id' => 'conversations#index'
-        post '/conversations/:conversation_id/message' => 'messages#new'
-        get '/conversations/:conversation_id/message' => 'messages#show'
-
-      end
-    end
-
-    mount ActionCable.server => "/cable"
-
-    resources :users
-    resources :messages
-    resources :channels
   end
 
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      get 'users/get_contacts' => 'users#get_contacts'
+      get '/conversations' => 'conversations#show'
+      post '/conversations' => 'conversations#new'
+      get '/conversations/:conversation_id' => 'conversations#index'
+      post '/conversations/:conversation_id/message' => 'messages#new'
+      get '/conversations/:conversation_id/message' => 'messages#show'
+    end
+  end
 
+  mount ActionCable.server => "/cable"
+
+  resources :users
+  resources :messages
+  resources :channels
 end
-

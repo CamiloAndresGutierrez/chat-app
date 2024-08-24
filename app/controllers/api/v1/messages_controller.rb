@@ -1,13 +1,14 @@
 module Api::V1
     class MessagesController < ApplicationController
         before_action :set_conversation
+
         def new
             raise 'User has no access to this conversation.' if @conversation.conversation_participants.find_by(user_id: current_user.id).nil?
 
         new_message = current_user.messages.create!(
             conversation: @conversation,
             content: params['content']
-            )
+        )
 
         if (new_message.present?)
             ConversationsChannel.broadcast_to(@conversation, new_message)
@@ -18,6 +19,8 @@ module Api::V1
             render json: { success: false, message: e.message }, status: :unprocessable_entity
         rescue ActiveRecord::RecordNotFound => e
             render json: { success: false, message: e.message }, status: :not_found
+        rescue StandardError => e
+            render json: { success: false, message: e.message }, status: :unprocessable_entity
         end
     
         def show

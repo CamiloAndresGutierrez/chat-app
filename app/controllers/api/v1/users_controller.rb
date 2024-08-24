@@ -1,5 +1,5 @@
 module Api::V1
-    class UsersController < ApplicationController            
+    class UsersController < ApplicationController
         def get_contacts
             render :json => {
                 success: true,

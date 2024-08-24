@@ -22132,3 +22132,506 @@ Processing by Api::V1::ConversationsController#index as JSON
 Completed 200 OK in 123ms (Views: 9.8ms | ActiveRecord: 10.8ms | Allocations: 30439)
 
 
+Started GET "/cable" for 127.0.0.1 at 2024-08-19 18:24:19 -0500
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2024-08-19 18:24:19 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mConversation Load (1.0ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:3:in `subscribed'
+ConversationsChannel is transmitting the subscription confirmation
+ConversationsChannel is streaming from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzM
+Started POST "/api/v1/conversations/3/message" for ::1 at 2024-08-19 18:24:44 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje 1", "conversation_id"=>"3", "message"=>{"content"=>"Mensaje 1"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.9ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:31:in `set_conversation'
+  [1m[36mConversationParticipant Load (1.0ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 AND "conversation_participants"."user_id" = $2 LIMIT $3[0m  [["conversation_id", 3], ["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:5:in `new'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:7:in `new'
+  [1m[36mMessage Create (10.4ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Mensaje 1"], ["deleted_at", nil], ["conversation_id", 3], ["user_id", 18], ["created_at", "2024-08-19 23:24:44.462957"], ["updated_at", "2024-08-19 23:24:44.462957"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:7:in `new'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:7:in `new'
+[ActionCable] Broadcasting to conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzM: #<Message id: 18, content: "Mensaje 1", deleted_at: nil, conversation_id: 3, user_id: 18, created_at: "2024-08-19 23:24:44.462957000 +0000", updated_at: "2024-08-19 23:24:44.462957000 +0000">
+ConversationsChannel transmitting {"id"=>18, "content"=>"Mensaje 1", "deleted_at"=>nil, "conversation_id"=>3, "user_id"=>18, "created_at"=>"2024-08-19T23:24:44.462Z", "updated_at"=>"2024-08-19T23:24:44.462Z"} (via streamed from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzM)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.76ms)
+Completed 201 Created in 67ms (Views: 2.3ms | ActiveRecord: 29.0ms | Allocations: 10934)
+
+
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2024-08-19 18:25:04 -0500
+ConversationsChannel stopped streaming from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzM
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/cable?conversation_id=3" for 127.0.0.1 at 2024-08-23 20:40:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable?conversation_id=3" [WebSocket] for 127.0.0.1 at 2024-08-23 20:40:49 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mConversation Load (1.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:3:in `subscribed'
+ConversationsChannel is transmitting the subscription confirmation
+ConversationsChannel is streaming from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzM
+Finished "/cable?conversation_id=3" [WebSocket] for 127.0.0.1 at 2024-08-23 20:41:06 -0500
+ConversationsChannel stopped streaming from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzM
+Started GET "/cable?conversation_id=3" for 127.0.0.1 at 2024-08-23 20:41:44 -0500
+Started GET "/cable?conversation_id=3" [WebSocket] for 127.0.0.1 at 2024-08-23 20:41:44 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mConversation Load (0.8ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:3:in `subscribed'
+ConversationsChannel is transmitting the subscription confirmation
+ConversationsChannel is streaming from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI
+Started POST "/api/v1/conversations/3/message" for ::1 at 2024-08-23 20:42:21 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje 1", "conversation_id"=>"3", "message"=>{"content"=>"Mensaje 1"}}
+Completed 401 Unauthorized in 20ms (ActiveRecord: 1.7ms | Allocations: 2516)
+
+
+Started POST "/api/v1/conversations/3/message" for ::1 at 2024-08-23 20:42:40 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations", "conversation_id"=>"3", "message"=>{"content"=>"Mensaje para testear conversations"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 597)
+
+
+Started POST "/login" for ::1 at 2024-08-23 20:42:46 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Update (5.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 3], ["current_sign_in_at", "2024-08-24 01:42:46.430544"], ["last_sign_in_at", "2024-08-19 21:57:25.366676"], ["id", 18]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.47ms)
+Completed 200 OK in 398ms (Views: 10.1ms | ActiveRecord: 17.5ms | Allocations: 235643)
+
+
+Started POST "/api/v1/conversations/3/message" for ::1 at 2024-08-23 20:43:02 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations", "conversation_id"=>"3", "message"=>{"content"=>"Mensaje para testear conversations"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:33:in `set_conversation'
+  [1m[36mConversationParticipant Load (3.4ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 AND "conversation_participants"."user_id" = $2 LIMIT $3[0m  [["conversation_id", 3], ["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:5:in `new'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:7:in `new'
+  [1m[36mMessage Create (7.7ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Mensaje para testear conversations"], ["deleted_at", nil], ["conversation_id", 3], ["user_id", 18], ["created_at", "2024-08-24 01:43:02.498424"], ["updated_at", "2024-08-24 01:43:02.498424"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:7:in `new'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:7:in `new'
+[ActionCable] Broadcasting to conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzM: #<Message id: 19, content: "Mensaje para testear conversations", deleted_at: nil, conversation_id: 3, user_id: 18, created_at: "2024-08-24 01:43:02.498424000 +0000", updated_at: "2024-08-24 01:43:02.498424000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.3ms)
+Completed 201 Created in 113ms (Views: 1.5ms | ActiveRecord: 20.0ms | Allocations: 71460)
+
+
+Started POST "/api/v1/conversations/2/message" for ::1 at 2024-08-23 20:44:25 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations", "conversation_id"=>"2", "message"=>{"content"=>"Mensaje para testear conversations"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.8ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:33:in `set_conversation'
+  [1m[36mConversationParticipant Load (0.6ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 AND "conversation_participants"."user_id" = $2 LIMIT $3[0m  [["conversation_id", 2], ["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:5:in `new'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:7:in `new'
+  [1m[36mMessage Create (2.3ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Mensaje para testear conversations"], ["deleted_at", nil], ["conversation_id", 2], ["user_id", 18], ["created_at", "2024-08-24 01:44:25.345788"], ["updated_at", "2024-08-24 01:44:25.345788"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:7:in `new'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:7:in `new'
+[ActionCable] Broadcasting to conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI: #<Message id: 20, content: "Mensaje para testear conversations", deleted_at: nil, conversation_id: 2, user_id: 18, created_at: "2024-08-24 01:44:25.345788000 +0000", updated_at: "2024-08-24 01:44:25.345788000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.43ms)
+ConversationsChannel transmitting {"id"=>20, "content"=>"Mensaje para testear conversations", "deleted_at"=>nil, "conversation_id"=>2, "user_id"=>18, "created_at"=>"2024-08-24T01:44:25.345Z", "updated_at"=>"2024-08-24T01:44:25.345Z"} (via streamed from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI)
+Completed 201 Created in 22ms (Views: 2.1ms | ActiveRecord: 6.1ms | Allocations: 5900)
+
+
+Finished "/cable?conversation_id=3" [WebSocket] for 127.0.0.1 at 2024-08-23 20:44:40 -0500
+ConversationsChannel stopped streaming from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI
+Started GET "/api/v1/conversations/3" for ::1 at 2024-08-23 20:48:48 -0500
+  
+SyntaxError (/home/camilo99/Files/chat-app/config/routes.rb:29: syntax error, unexpected `end', expecting end-of-input):
+  
+config/routes.rb:29: syntax error, unexpected `end', expecting end-of-input
+Started GET "/api/v1/conversations/3" for ::1 at 2024-08-23 20:49:12 -0500
+Processing by Api::V1::ConversationsController#index as JSON
+  Parameters: {"title"=>"New conversation", "to_email"=>"camilo1999gutierr@gmail.com", "conversation_id"=>"3", "conversation"=>{"title"=>"New conversation"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (1.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 AND "conversations"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:47:in `index'
+[active_model_serializers]   [1m[36mConversationParticipant Load (0.3ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1[0m  [["conversation_id", 3]]
+[active_model_serializers]   ↳ app/serializers/conversation_serializer.rb:8:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 18], ["id", 14]]
+[active_model_serializers]   ↳ app/serializers/conversation_serializer.rb:8:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (20.16ms)
+Completed 200 OK in 76ms (Views: 19.9ms | ActiveRecord: 13.5ms | Allocations: 35488)
+
+
+Started GET "/api/v1/conversations/3" for ::1 at 2024-08-23 20:49:34 -0500
+Processing by Api::V1::ConversationsController#index as JSON
+  Parameters: {"title"=>"New conversation", "to_email"=>"camilo1999gutierr@gmail.com", "conversation_id"=>"3", "conversation"=>{"title"=>"New conversation"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 230)
+
+
+Started POST "/api/v1/conversations/2/message" for ::1 at 2024-08-23 20:50:08 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations", "conversation_id"=>"2", "message"=>{"content"=>"Mensaje para testear conversations"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 1.9ms | Allocations: 630)
+
+
+Started POST "/api/v1/conversations/2/message" for ::1 at 2024-08-23 20:50:17 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations", "conversation_id"=>"2", "message"=>{"content"=>"Mensaje para testear conversations"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 176)
+
+
+Started POST "/login" for ::1 at 2024-08-23 20:50:23 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 4], ["current_sign_in_at", "2024-08-24 01:50:23.328016"], ["last_sign_in_at", "2024-08-24 01:42:46.430544"], ["id", 18]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 244ms (Views: 1.0ms | ActiveRecord: 5.4ms | Allocations: 7223)
+
+
+Started POST "/api/v1/conversations/2/message" for ::1 at 2024-08-23 20:51:07 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations", "conversation_id"=>"2", "message"=>{"content"=>"Mensaje para testear conversations"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.7ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:35:in `set_conversation'
+  [1m[36mConversationParticipant Load (0.7ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 AND "conversation_participants"."user_id" = $2 LIMIT $3[0m  [["conversation_id", 2], ["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:7:in `new'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:9:in `new'
+  [1m[36mMessage Create (2.5ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Mensaje para testear conversations"], ["deleted_at", nil], ["conversation_id", 2], ["user_id", 18], ["created_at", "2024-08-24 01:51:07.368135"], ["updated_at", "2024-08-24 01:51:07.368135"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:9:in `new'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:9:in `new'
+[ActionCable] Broadcasting to conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI: #<Message id: 21, content: "Mensaje para testear conversations", deleted_at: nil, conversation_id: 2, user_id: 18, created_at: "2024-08-24 01:51:07.368135000 +0000", updated_at: "2024-08-24 01:51:07.368135000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.38ms)
+Completed 201 Created in 42ms (Views: 1.0ms | ActiveRecord: 9.6ms | Allocations: 16162)
+
+
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7514442817982023350)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddAuthenticationTokenToUsers (20240824021231)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.5ms)[0m  [1m[35mALTER TABLE "users" ADD "authentication_token" character varying[0m
+  [1m[35m (21.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240824021231') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7514442817982023350)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/login" for ::1 at 2024-08-23 22:45:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.33ms)
+Completed 200 OK in 58ms (Views: 4.3ms | ActiveRecord: 6.7ms | Allocations: 16477)
+
+
+Started POST "/login" for ::1 at 2024-08-23 22:47:31 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:18:in `respond_with'
+  [1m[36mUser Update (3.2ms)[0m  [1m[33mUPDATE "users" SET "authentication_token" = $1 WHERE "users"."id" = $2[0m  [["authentication_token", "[FILTERED]"], ["id", 18]]
+  ↳ app/controllers/sessions_controller.rb:18:in `respond_with'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:18:in `respond_with'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.46ms)
+Completed 200 OK in 68ms (Views: 3.4ms | ActiveRecord: 21.7ms | Allocations: 28738)
+
+
+Started POST "/login" for ::1 at 2024-08-23 22:47:43 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 5], ["current_sign_in_at", "2024-08-24 03:47:43.781300"], ["last_sign_in_at", "2024-08-24 01:50:23.328016"], ["id", 18]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 248ms (Views: 0.7ms | ActiveRecord: 5.7ms | Allocations: 4276)
+
+
+Started GET "/cable?conversation_id=3" for 127.0.0.1 at 2024-08-23 22:52:15 -0500
+Started GET "/cable?conversation_id=3" [WebSocket] for 127.0.0.1 at 2024-08-23 22:52:15 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mConversation Load (2.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:3:in `subscribed'
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"ConversationsChannel\",\"conversation_id\":2}"}) [JWT::DecodeError - Nil JSON web token]: /var/lib/gems/3.0.0/gems/jwt-2.8.2/lib/jwt/decode.rb:13:in `initialize' | /var/lib/gems/3.0.0/gems/jwt-2.8.2/lib/jwt.rb:31:in `new' | /var/lib/gems/3.0.0/gems/jwt-2.8.2/lib/jwt.rb:31:in `block in decode' | /var/lib/gems/3.0.0/gems/jwt-2.8.2/lib/jwt/deprecations.rb:8:in `context' | /var/lib/gems/3.0.0/gems/jwt-2.8.2/lib/jwt.rb:30:in `decode'
+Finished "/cable?conversation_id=3" [WebSocket] for 127.0.0.1 at 2024-08-23 22:52:28 -0500
+Started GET "/cable?conversation_id=3" for 127.0.0.1 at 2024-08-23 22:56:15 -0500
+Started GET "/cable?conversation_id=3" [WebSocket] for 127.0.0.1 at 2024-08-23 22:56:15 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable?conversation_id=3" [WebSocket] for 127.0.0.1 at 2024-08-23 22:56:21 -0500
+Started GET "/cable?conversation_id=3" for 127.0.0.1 at 2024-08-23 22:57:38 -0500
+Started GET "/cable?conversation_id=3" [WebSocket] for 127.0.0.1 at 2024-08-23 22:57:38 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable?conversation_id=3" [WebSocket] for 127.0.0.1 at 2024-08-23 22:57:41 -0500
+Started GET "/cable?conversation_id=3" for 127.0.0.1 at 2024-08-23 23:02:39 -0500
+Started GET "/cable?conversation_id=3" [WebSocket] for 127.0.0.1 at 2024-08-23 23:02:39 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Finished "/cable?conversation_id=3" [WebSocket] for 127.0.0.1 at 2024-08-23 23:03:19 -0500
+Started GET "/cable?conversation_id=3&token=[FILTERED]" for 127.0.0.1 at 2024-08-23 23:03:26 -0500
+Started GET "/cable?conversation_id=3&token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-08-23 23:03:26 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started POST "/api/v1/conversations/2/message" for ::1 at 2024-08-23 23:03:34 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations", "conversation_id"=>"2", "message"=>{"content"=>"Mensaje para testear conversations"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `set_conversation'
+  [1m[36mConversationParticipant Load (3.0ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 AND "conversation_participants"."user_id" = $2 LIMIT $3[0m  [["conversation_id", 2], ["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:6:in `new'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mMessage Create (6.1ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Mensaje para testear conversations"], ["deleted_at", nil], ["conversation_id", 2], ["user_id", 18], ["created_at", "2024-08-24 04:03:34.547056"], ["updated_at", "2024-08-24 04:03:34.547056"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+[ActionCable] Broadcasting to conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI: #<Message id: 22, content: "Mensaje para testear conversations", deleted_at: nil, conversation_id: 2, user_id: 18, created_at: "2024-08-24 04:03:34.547056000 +0000", updated_at: "2024-08-24 04:03:34.547056000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 201 Created in 407ms (Views: 1.8ms | ActiveRecord: 44.8ms | Allocations: 39460)
+
+
+Started POST "/api/v1/conversations/3/message" for ::1 at 2024-08-23 23:03:42 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations", "conversation_id"=>"3", "message"=>{"content"=>"Mensaje para testear conversations"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `set_conversation'
+  [1m[36mConversationParticipant Load (1.0ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 AND "conversation_participants"."user_id" = $2 LIMIT $3[0m  [["conversation_id", 3], ["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:6:in `new'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mMessage Create (1.8ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Mensaje para testear conversations"], ["deleted_at", nil], ["conversation_id", 3], ["user_id", 18], ["created_at", "2024-08-24 04:03:42.443984"], ["updated_at", "2024-08-24 04:03:42.443984"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+[ActionCable] Broadcasting to conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzM: #<Message id: 23, content: "Mensaje para testear conversations", deleted_at: nil, conversation_id: 3, user_id: 18, created_at: "2024-08-24 04:03:42.443984000 +0000", updated_at: "2024-08-24 04:03:42.443984000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 201 Created in 16ms (Views: 0.6ms | ActiveRecord: 6.0ms | Allocations: 5724)
+
+
+  [1m[36mConversation Load (0.4ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:3:in `subscribed'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:4:in `subscribed'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:5:in `subscribed'
+ConversationsChannel is transmitting the subscription confirmation
+ConversationsChannel is streaming from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI
+Started POST "/api/v1/conversations/3/message" for ::1 at 2024-08-23 23:04:12 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations", "conversation_id"=>"3", "message"=>{"content"=>"Mensaje para testear conversations"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.7ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `set_conversation'
+  [1m[36mConversationParticipant Load (0.6ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 AND "conversation_participants"."user_id" = $2 LIMIT $3[0m  [["conversation_id", 3], ["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:6:in `new'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mMessage Create (2.2ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Mensaje para testear conversations"], ["deleted_at", nil], ["conversation_id", 3], ["user_id", 18], ["created_at", "2024-08-24 04:04:12.679173"], ["updated_at", "2024-08-24 04:04:12.679173"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+[ActionCable] Broadcasting to conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzM: #<Message id: 24, content: "Mensaje para testear conversations", deleted_at: nil, conversation_id: 3, user_id: 18, created_at: "2024-08-24 04:04:12.679173000 +0000", updated_at: "2024-08-24 04:04:12.679173000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 201 Created in 20ms (Views: 0.8ms | ActiveRecord: 7.7ms | Allocations: 5396)
+
+
+Started POST "/api/v1/conversations/2/message" for ::1 at 2024-08-23 23:04:17 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations", "conversation_id"=>"2", "message"=>{"content"=>"Mensaje para testear conversations"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.7ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `set_conversation'
+  [1m[36mConversationParticipant Load (1.1ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 AND "conversation_participants"."user_id" = $2 LIMIT $3[0m  [["conversation_id", 2], ["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:6:in `new'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mMessage Create (2.1ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Mensaje para testear conversations"], ["deleted_at", nil], ["conversation_id", 2], ["user_id", 18], ["created_at", "2024-08-24 04:04:17.924524"], ["updated_at", "2024-08-24 04:04:17.924524"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+[ActionCable] Broadcasting to conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI: #<Message id: 25, content: "Mensaje para testear conversations", deleted_at: nil, conversation_id: 2, user_id: 18, created_at: "2024-08-24 04:04:17.924524000 +0000", updated_at: "2024-08-24 04:04:17.924524000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.28ms)
+Completed 201 Created in 19ms (Views: 1.0ms | ActiveRecord: 7.8ms | Allocations: 5415)
+
+
+ConversationsChannel transmitting {"id"=>25, "content"=>"Mensaje para testear conversations", "deleted_at"=>nil, "conversation_id"=>2, "user_id"=>18, "created_at"=>"2024-08-24T04:04:17.924Z", "updated_at"=>"2024-08-24T04:04:17.924Z"} (via streamed from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI)
+Finished "/cable?conversation_id=3&token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-08-23 23:04:32 -0500
+ConversationsChannel stopped streaming from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/cable?conversation_id=3&token=[FILTERED]" for 127.0.0.1 at 2024-08-23 23:05:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable?conversation_id=3&token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-08-23 23:05:01 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:3:in `subscribed'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:4:in `subscribed'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:5:in `subscribed'
+ConversationsChannel is transmitting the subscription confirmation
+ConversationsChannel is streaming from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI
+Started POST "/api/v1/conversations/2/message" for ::1 at 2024-08-23 23:05:19 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations", "conversation_id"=>"2", "message"=>{"content"=>"Mensaje para testear conversations"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `set_conversation'
+  [1m[36mConversationParticipant Load (0.5ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 AND "conversation_participants"."user_id" = $2 LIMIT $3[0m  [["conversation_id", 2], ["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:6:in `new'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mMessage Create (2.3ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Mensaje para testear conversations"], ["deleted_at", nil], ["conversation_id", 2], ["user_id", 18], ["created_at", "2024-08-24 04:05:19.552081"], ["updated_at", "2024-08-24 04:05:19.552081"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+[ActionCable] Broadcasting to conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI: #<Message id: 26, content: "Mensaje para testear conversations", deleted_at: nil, conversation_id: 2, user_id: 18, created_at: "2024-08-24 04:05:19.552081000 +0000", updated_at: "2024-08-24 04:05:19.552081000 +0000">
+ConversationsChannel transmitting {"id"=>26, "content"=>"Mensaje para testear conversations", "deleted_at"=>nil, "conversation_id"=>2, "user_id"=>18, "created_at"=>"2024-08-24T04:05:19.552Z", "updated_at"=>"2024-08-24T04:05:19.552Z"} (via streamed from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.04ms)
+Completed 201 Created in 111ms (Views: 11.8ms | ActiveRecord: 12.7ms | Allocations: 71159)
+
+
+Started POST "/api/v1/conversations/2/message" for ::1 at 2024-08-23 23:05:33 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations", "conversation_id"=>"2", "message"=>{"content"=>"Mensaje para testear conversations"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `set_conversation'
+  [1m[36mConversationParticipant Load (0.7ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 AND "conversation_participants"."user_id" = $2 LIMIT $3[0m  [["conversation_id", 2], ["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:6:in `new'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mMessage Create (1.8ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Mensaje para testear conversations"], ["deleted_at", nil], ["conversation_id", 2], ["user_id", 18], ["created_at", "2024-08-24 04:05:33.720833"], ["updated_at", "2024-08-24 04:05:33.720833"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+[ActionCable] Broadcasting to conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI: #<Message id: 27, content: "Mensaje para testear conversations", deleted_at: nil, conversation_id: 2, user_id: 18, created_at: "2024-08-24 04:05:33.720833000 +0000", updated_at: "2024-08-24 04:05:33.720833000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 201 Created in 17ms (Views: 0.9ms | ActiveRecord: 6.1ms | Allocations: 5819)
+
+
+ConversationsChannel transmitting {"id"=>27, "content"=>"Mensaje para testear conversations", "deleted_at"=>nil, "conversation_id"=>2, "user_id"=>18, "created_at"=>"2024-08-24T04:05:33.720Z", "updated_at"=>"2024-08-24T04:05:33.720Z"} (via streamed from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI)
+Started POST "/api/v1/conversations/3/message" for ::1 at 2024-08-23 23:05:37 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations", "conversation_id"=>"3", "message"=>{"content"=>"Mensaje para testear conversations"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `set_conversation'
+  [1m[36mConversationParticipant Load (1.0ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 AND "conversation_participants"."user_id" = $2 LIMIT $3[0m  [["conversation_id", 3], ["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:6:in `new'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mMessage Create (2.0ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Mensaje para testear conversations"], ["deleted_at", nil], ["conversation_id", 3], ["user_id", 18], ["created_at", "2024-08-24 04:05:37.902091"], ["updated_at", "2024-08-24 04:05:37.902091"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+[ActionCable] Broadcasting to conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzM: #<Message id: 28, content: "Mensaje para testear conversations", deleted_at: nil, conversation_id: 3, user_id: 18, created_at: "2024-08-24 04:05:37.902091000 +0000", updated_at: "2024-08-24 04:05:37.902091000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 201 Created in 18ms (Views: 0.8ms | ActiveRecord: 7.5ms | Allocations: 5409)
+
+
+Started POST "/api/v1/conversations/3/message" for ::1 at 2024-08-23 23:05:57 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations 3", "conversation_id"=>"3", "message"=>{"content"=>"Mensaje para testear conversations 3"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `set_conversation'
+  [1m[36mConversationParticipant Load (0.6ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 AND "conversation_participants"."user_id" = $2 LIMIT $3[0m  [["conversation_id", 3], ["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:6:in `new'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mMessage Create (2.2ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Mensaje para testear conversations 3"], ["deleted_at", nil], ["conversation_id", 3], ["user_id", 18], ["created_at", "2024-08-24 04:05:57.425914"], ["updated_at", "2024-08-24 04:05:57.425914"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+[ActionCable] Broadcasting to conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzM: #<Message id: 29, content: "Mensaje para testear conversations 3", deleted_at: nil, conversation_id: 3, user_id: 18, created_at: "2024-08-24 04:05:57.425914000 +0000", updated_at: "2024-08-24 04:05:57.425914000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 201 Created in 18ms (Views: 0.9ms | ActiveRecord: 6.7ms | Allocations: 5401)
+
+
+Started POST "/api/v1/conversations/2/message" for ::1 at 2024-08-23 23:06:06 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"Mensaje para testear conversations 3", "conversation_id"=>"2", "message"=>{"content"=>"Mensaje para testear conversations 3"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `set_conversation'
+  [1m[36mConversationParticipant Load (0.7ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 AND "conversation_participants"."user_id" = $2 LIMIT $3[0m  [["conversation_id", 2], ["user_id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:6:in `new'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mMessage Create (2.8ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "Mensaje para testear conversations 3"], ["deleted_at", nil], ["conversation_id", 2], ["user_id", 18], ["created_at", "2024-08-24 04:06:06.405194"], ["updated_at", "2024-08-24 04:06:06.405194"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:8:in `new'
+[ActionCable] Broadcasting to conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI: #<Message id: 30, content: "Mensaje para testear conversations 3", deleted_at: nil, conversation_id: 2, user_id: 18, created_at: "2024-08-24 04:06:06.405194000 +0000", updated_at: "2024-08-24 04:06:06.405194000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.36ms)
+ConversationsChannel transmitting {"id"=>30, "content"=>"Mensaje para testear conversations 3", "deleted_at"=>nil, "conversation_id"=>2, "user_id"=>18, "created_at"=>"2024-08-24T04:06:06.405Z", "updated_at"=>"2024-08-24T04:06:06.405Z"} (via streamed from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI)
+Completed 201 Created in 25ms (Views: 1.7ms | ActiveRecord: 8.3ms | Allocations: 5552)
+
+
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/cable?conversation_id=3&token=[FILTERED]" for 127.0.0.1 at 2024-08-23 23:07:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable?conversation_id=3&token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-08-23 23:07:16 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mConversation Load (0.7ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:3:in `subscribed'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:4:in `subscribed'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:5:in `subscribed'
+ConversationsChannel is transmitting the subscription confirmation
+ConversationsChannel is streaming from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI
+Finished "/cable?conversation_id=3&token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-08-23 23:08:57 -0500
+ConversationsChannel stopped streaming from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI
+Started GET "/cable?conversation_id=3&token=[FILTERED]" for 127.0.0.1 at 2024-08-23 23:09:02 -0500
+Started GET "/cable?conversation_id=3&token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-08-23 23:09:02 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mConversation Load (0.8ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:3:in `subscribed'
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"ConversationsChannel\",\"conversation_id\":2}"}) [NameError - undefined local variable or method `reject_unauthorized_connection' for #<ConversationsChannel:0x00007f4b582ddd90 @connection=#<ApplicationCable::Connection:0x00000000014e88>, @identifier="{\"channel\":\"ConversationsChannel\",\"conversation_id\":2}", @params={"channel"=>"ConversationsChannel", "conversation_id"=>2}, @defer_subscription_confirmation_counter=#<Concurrent::AtomicFixnum:0x00007f4b582ddcf0 value:1>, @reject_subscription=nil, @subscription_confirmation_sent=nil>]: /home/camilo99/Files/chat-app/app/channels/conversations_channel.rb:4:in `subscribed' | /var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/channel/base.rb:184:in `block in subscribe_to_channel' | /var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks' | /var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/execution_wrapper.rb:88:in `wrap' | /var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/engine.rb:85:in `block (3 levels) in <class:Engine>'
+Finished "/cable?conversation_id=3&token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-08-23 23:10:05 -0500
+Started GET "/cable?conversation_id=3&token=[FILTERED]" for 127.0.0.1 at 2024-08-23 23:10:05 -0500
+Started GET "/cable?conversation_id=3&token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-08-23 23:10:05 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mConversation Load (1.3ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:3:in `subscribed'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = $1 LIMIT $2[0m  [["authentication_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/channels/conversations_channel.rb:5:in `subscribed'
+ConversationsChannel is transmitting the subscription confirmation
+ConversationsChannel is streaming from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI
