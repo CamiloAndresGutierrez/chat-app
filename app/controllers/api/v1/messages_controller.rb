@@ -15,8 +15,6 @@ module Api::V1
         end
 
         render json: { success: true, message: MessageSerializer.new(new_message) }, status: :created
-        rescue ActiveRecord::RecordInvalid => e
-            render json: { success: false, message: e.message }, status: :unprocessable_entity
         rescue ActiveRecord::RecordNotFound => e
             render json: { success: false, message: e.message }, status: :not_found
         rescue StandardError => e
@@ -33,9 +31,9 @@ module Api::V1
         def set_conversation
             @conversation = Conversation.find_by!(id: params[:conversation_id])
         end
-        
+
         def message_params
-            params.require(:message).permit(:content)
+            params.require(:conversation_id, :content)
         end
     end
 end

@@ -13,8 +13,8 @@ class SessionsController < Devise::SessionsController
 
   private
   def respond_with(current_user, _opts = {})
-    auth_token = JWT.encode(params[:email], Rails.application.credentials.devise_jwt_secret_key!)
-    current_user.update(authentication_token: auth_token)
+    auth_token = JWT.encode(current_user, Rails.application.credentials.devise_jwt_secret_key!)
+    current_user.update!(authentication_token: auth_token)
 
     render json: {
       success: true,
@@ -27,6 +27,8 @@ class SessionsController < Devise::SessionsController
       jwt_payload = JWT.decode(request.headers['Authorization'].split(' ').last, Rails.application.credentials.devise_jwt_secret_key!).first
       current_user = User.find(jwt_payload['sub'])
     end
+
+    current_user.update(authentication_token: nil)
     
     if current_user
       render json: {
@@ -39,5 +41,11 @@ class SessionsController < Devise::SessionsController
         message: "Couldn't find an active session."
       }, status: :unauthorized
     end
+  end
+
+  private
+
+  def session_params
+    params.require(:user).permit(:email)
   end
 end

@@ -22635,3 +22635,1209 @@ Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrad
   ↳ app/channels/conversations_channel.rb:5:in `subscribed'
 ConversationsChannel is transmitting the subscription confirmation
 ConversationsChannel is streaming from conversations:Z2lkOi8vY2hhdC1hcHAvQ29udmVyc2F0aW9uLzI
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (1.6ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."user_id" = $1 AND "conversation_participants"."user_id" != $2[0m  [["user_id", 1], ["user_id", 1]]
+  [1m[36mConversationParticipant Load (1.9ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (0.6ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."user_id" = $1 AND "conversation_participants"."user_id" != $2[0m  [["user_id", 14], ["user_id", 14]]
+  [1m[36mConversationParticipant Load (0.4ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."user_id" = $1 /* loading for pp */ LIMIT $2[0m  [["user_id", 14], ["LIMIT", 11]]
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/api/v1/conversations/3" for ::1 at 2024-09-07 17:19:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ConversationsController#index as JSON
+  Parameters: {"title"=>"New conversation", "to_email"=>"camilo1999gutierr@gmail.com", "conversation_id"=>"3", "conversation"=>{"title"=>"New conversation"}}
+Completed 401 Unauthorized in 7ms (ActiveRecord: 13.5ms | Allocations: 2171)
+
+
+Started POST "/login" for ::1 at 2024-09-07 17:19:08 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Update (20.3ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 6], ["current_sign_in_at", "2024-09-07 22:19:09.455585"], ["last_sign_in_at", "2024-08-24 03:47:43.781300"], ["id", 18]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.2ms)
+Completed 200 OK in 575ms (Views: 12.5ms | ActiveRecord: 32.6ms | Allocations: 286341)
+
+
+Started GET "/api/v1/conversations/3" for ::1 at 2024-09-07 17:19:53 -0500
+Processing by Api::V1::ConversationsController#index as JSON
+  Parameters: {"title"=>"New conversation", "to_email"=>"camilo1999gutierr@gmail.com", "conversation_id"=>"3", "conversation"=>{"title"=>"New conversation"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.7ms | Allocations: 12487)
+
+
+  
+NoMethodError (undefined method `set_conversation' for #<Api::V1::ConversationsController:0x0000000000eee8>):
+  
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:183:in `block (2 levels) in halting_and_conditional'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:184:in `block in halting_and_conditional'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.4) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:882:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (3.1.6) lib/rack/builder.rb:277:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware.rb:22:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.6) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.6) lib/rack/etag.rb:29:in `call'
+rack (3.1.6) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.6) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.6) lib/rack/method_override.rb:28:in `call'
+rack (3.1.6) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.6) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/api/v1/conversations/3" for ::1 at 2024-09-07 17:23:20 -0500
+Processing by Api::V1::ConversationsController#index as JSON
+  Parameters: {"title"=>"New conversation", "to_email"=>"camilo1999gutierr@gmail.com", "conversation_id"=>"3", "conversation"=>{"title"=>"New conversation"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.7ms | Allocations: 4408)
+
+
+  
+NoMethodError (undefined method `set_conversation' for #<Api::V1::ConversationsController:0x0000000000f2f8>):
+  
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:183:in `block (2 levels) in halting_and_conditional'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:184:in `block in halting_and_conditional'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.4) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:882:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (3.1.6) lib/rack/builder.rb:277:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware.rb:22:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.6) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.6) lib/rack/etag.rb:29:in `call'
+rack (3.1.6) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.6) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.6) lib/rack/method_override.rb:28:in `call'
+rack (3.1.6) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.6) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/api/v1/conversations/3" for ::1 at 2024-09-07 17:23:24 -0500
+Processing by Api::V1::ConversationsController#index as JSON
+  Parameters: {"title"=>"New conversation", "to_email"=>"camilo1999gutierr@gmail.com", "conversation_id"=>"3", "conversation"=>{"title"=>"New conversation"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms | Allocations: 4166)
+
+
+  
+NoMethodError (undefined method `set_conversation' for #<Api::V1::ConversationsController:0x0000000000f640>):
+  
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:183:in `block (2 levels) in halting_and_conditional'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:184:in `block in halting_and_conditional'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.4) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:882:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (3.1.6) lib/rack/builder.rb:277:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware.rb:22:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.6) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.6) lib/rack/etag.rb:29:in `call'
+rack (3.1.6) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.6) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.6) lib/rack/method_override.rb:28:in `call'
+rack (3.1.6) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.6) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/api/v1/conversations/3" for ::1 at 2024-09-07 17:23:34 -0500
+Processing by Api::V1::ConversationsController#index as JSON
+  Parameters: {"title"=>"New conversation", "to_email"=>"camilo1999gutierr@gmail.com", "conversation_id"=>"3", "conversation"=>{"title"=>"New conversation"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms | Allocations: 4188)
+
+
+  
+NoMethodError (undefined method `set_conversation' for #<Api::V1::ConversationsController:0x0000000000f960>):
+  
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:183:in `block (2 levels) in halting_and_conditional'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:184:in `block in halting_and_conditional'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.4) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:882:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (3.1.6) lib/rack/builder.rb:277:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware.rb:22:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.6) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.6) lib/rack/etag.rb:29:in `call'
+rack (3.1.6) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.6) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.6) lib/rack/method_override.rb:28:in `call'
+rack (3.1.6) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.6) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/api/v1/conversations/3" for ::1 at 2024-09-07 17:25:21 -0500
+Processing by Api::V1::ConversationsController#index as JSON
+  Parameters: {"title"=>"New conversation", "to_email"=>"camilo1999gutierr@gmail.com", "conversation_id"=>"3", "conversation"=>{"title"=>"New conversation"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: index, request: #<ActionDispatch::Request:0x00007f4ad53da8e8>, params: {"title"=>"New conversation", "to_email"=>"camilo1999gutierr@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"index", "conversation_id"=>"3", "conversation"=>{"title"=>"New conversation"}} }[0m
+  [1m[36mConversation Load (6.1ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 AND "conversations"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:56:in `set_conversation'
+[active_model_serializers]   [1m[36mConversationParticipant Load (0.5ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1[0m  [["conversation_id", 3]]
+[active_model_serializers]   ↳ app/serializers/conversation_serializer.rb:8:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 18], ["id", 14]]
+[active_model_serializers]   ↳ app/serializers/conversation_serializer.rb:8:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (42.55ms)
+Completed 200 OK in 171ms (Views: 41.3ms | ActiveRecord: 19.4ms | Allocations: 125626)
+
+
+Started GET "/api/v1/conversations/3" for ::1 at 2024-09-07 17:26:53 -0500
+Processing by Api::V1::ConversationsController#index as JSON
+  Parameters: {"title"=>"New conversation", "to_email"=>"camilo1999gutierr@gmail.com", "conversation_id"=>"3", "conversation"=>{"title"=>"New conversation"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (4.0ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 7], ["current_sign_in_at", "2024-09-07 22:26:53.452717"], ["last_sign_in_at", "2024-09-07 22:19:09.455585"], ["id", 18]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: index, request: #<ActionDispatch::Request:0x00007f4ac0c7ac10>, params: {"title"=>"New conversation", "to_email"=>"camilo1999gutierr@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"index", "conversation_id"=>"3", "conversation"=>{"title"=>"New conversation"}} }[0m
+  [1m[36mConversation Load (1.0ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 AND "conversations"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:56:in `set_conversation'
+[active_model_serializers]   [1m[36mConversationParticipant Load (0.6ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1[0m  [["conversation_id", 3]]
+[active_model_serializers]   ↳ app/serializers/conversation_serializer.rb:8:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 18], ["id", 14]]
+[active_model_serializers]   ↳ app/serializers/conversation_serializer.rb:8:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.84ms)
+Completed 200 OK in 29ms (Views: 4.1ms | ActiveRecord: 10.2ms | Allocations: 8742)
+
+
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (1.3ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."user_id" = $1 AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+Started GET "/api/v1/conversations/3" for ::1 at 2024-09-07 17:31:23 -0500
+Processing by Api::V1::ConversationsController#index as JSON
+  Parameters: {"conversation_id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (3.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 8], ["current_sign_in_at", "2024-09-07 22:31:23.336538"], ["last_sign_in_at", "2024-09-07 22:26:53.452717"], ["id", 18]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+[31mUnpermitted parameter: :format. Context: { controller: Api::V1::ConversationsController, action: index, request: #<ActionDispatch::Request:0x00007f4ac0eb5408>, params: {"format"=>"json", "controller"=>"api/v1/conversations", "action"=>"index", "conversation_id"=>"3"} }[0m
+  [1m[36mConversation Load (0.9ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 AND "conversations"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:56:in `set_conversation'
+[active_model_serializers]   [1m[36mConversationParticipant Load (0.6ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1[0m  [["conversation_id", 3]]
+[active_model_serializers]   ↳ app/serializers/conversation_serializer.rb:8:in `map'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 18], ["id", 14]]
+[active_model_serializers]   ↳ app/serializers/conversation_serializer.rb:8:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.39ms)
+Completed 200 OK in 31ms (Views: 5.1ms | ActiveRecord: 10.0ms | Allocations: 7387)
+
+
+  [1m[36mConversation Load (1.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.9ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (0.7ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1 /* loading for pp */ LIMIT $2[0m  [["conversation_id", 3], ["LIMIT", 11]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (1.3ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."user_id" = $1 AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (0.7ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."user_id" = $1 AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mConversation Load (2.0ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for pp */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (2.5ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) /* loading for pp */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversationParticipant Load (1.4ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2 /* loading for pp */ LIMIT $3[0m  [["user_id", 18], ["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversationParticipant Load (1.1ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2 /* loading for pp */ LIMIT $3[0m  [["user_id", 18], ["user_id", 18], ["LIMIT", 11]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+  [1m[36mConversationParticipant Load (1.6ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+  [1m[36mConversationParticipant Load (0.7ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."user_id" = $1 AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mConversationParticipant Load (1.2ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."user_id" = $1 AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mConversationParticipant Load (1.0ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."user_id" = $1 AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (1.5ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (1.6ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+  [1m[36mConversationParticipant Load (1.7ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (6.6ms)[0m  [1m[34mSELECT DISTINCT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (1.6ms)[0m  [1m[34mSELECT DISTINCT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (1.5ms)[0m  [1m[34mSELECT DISTINCT ON (id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+  [1m[36mConversationParticipant Load (1.1ms)[0m  [1m[34mSELECT DISTINCT ON (id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2 /* loading for pp */ LIMIT $3[0m  [["user_id", 18], ["user_id", 18], ["LIMIT", 11]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (1.6ms)[0m  [1m[34mSELECT DISTINCT ON (id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2 /* loading for pp */ LIMIT $3[0m  [["user_id", 18], ["user_id", 18], ["LIMIT", 11]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (1.5ms)[0m  [1m[34mSELECT DISTINCT ON (id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2 /* loading for pp */ LIMIT $3[0m  [["user_id", 18], ["user_id", 18], ["LIMIT", 11]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (1.3ms)[0m  [1m[34mSELECT DISTINCT ON (user_id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:06:02 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiraldosoto@gmail.com", "conversation"=>{}}
+Completed 401 Unauthorized in 7ms (ActiveRecord: 7.8ms | Allocations: 2064)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:31:02 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiraldosoto@gmail.com", "conversation"=>{}}
+Completed 401 Unauthorized in 9ms (ActiveRecord: 4.9ms | Allocations: 2061)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:31:16 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiraldosoto@gmail.com", "conversation"=>{}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 588)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:32:27 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"camilo1999gutierrez+1@gmail.com", "conversation"=>{}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 586)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:33:21 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiraldosoto@gmail.com", "conversation"=>{}}
+Completed 401 Unauthorized in 5ms (ActiveRecord: 2.8ms | Allocations: 2059)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:33:59 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiraldosoto@gmail.com", "conversation"=>{}}
+Completed 401 Unauthorized in 6ms (ActiveRecord: 2.9ms | Allocations: 2059)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:34:59 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiraldosoto@gmail.com", "conversation"=>{}}
+Completed 401 Unauthorized in 5ms (ActiveRecord: 2.7ms | Allocations: 2061)
+
+
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:36:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiraldosoto@gmail.com", "conversation"=>{}}
+Completed 401 Unauthorized in 11ms (ActiveRecord: 10.0ms | Allocations: 2544)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:37:51 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiraldosoto@gmail.com", "title"=>"Conversation", "conversation"=>{"title"=>"Conversation"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 643)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:38:28 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiraldosoto@gmail.com", "title"=>"Conversation", "conversation"=>{"title"=>"Conversation"}}
+Completed 401 Unauthorized in 7ms (ActiveRecord: 2.7ms | Allocations: 2059)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:39:44 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiraldosoto@gmail.com", "conversation"=>{}}
+Completed 401 Unauthorized in 33ms (ActiveRecord: 6.4ms | Allocations: 2059)
+
+
+Started POST "/login" for ::1 at 2024-09-07 18:41:22 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Update (3.0ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 9], ["current_sign_in_at", "2024-09-07 23:41:23.481197"], ["last_sign_in_at", "2024-09-07 22:31:23.336538"], ["id", 18]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.68ms)
+Completed 200 OK in 526ms (Views: 12.5ms | ActiveRecord: 15.6ms | Allocations: 286447)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:41:43 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiraldosoto@gmail.com", "conversation"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa8341e8230>, params: {"to_email"=>"isabellagiraldosoto@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa8341e8230>, params: {"to_email"=>"isabellagiraldosoto@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "isabellagiraldosoto@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:65:in `set_recipient'
+Completed 404 Not Found in 29ms (ActiveRecord: 1.4ms | Allocations: 5397)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with [WHERE "users"."email" = $1]):
+  
+app/controllers/api/v1/conversations_controller.rb:65:in `set_recipient'
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:42:08 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiraldosoto@gmail.com", "conversation"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa855895f80>, params: {"to_email"=>"isabellagiraldosoto@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "isabellagiraldosoto@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:60:in `set_recipient'
+Completed 404 Not Found in 26ms (ActiveRecord: 6.2ms | Allocations: 13386)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with [WHERE "users"."email" = $1]):
+  
+app/controllers/api/v1/conversations_controller.rb:60:in `set_recipient'
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:43:08 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiraldosoto@gmail.com", "conversation"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa84810ccf8>, params: {"to_email"=>"isabellagiraldosoto@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "isabellagiraldosoto@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:58:in `set_recipient'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :set_recipient rendered or redirected
+Completed 404 Not Found in 23ms (Views: 1.7ms | ActiveRecord: 7.4ms | Allocations: 17221)
+
+
+Started POST "/sign_up" for ::1 at 2024-09-07 18:46:12 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"email"=>"isabellagiraldosoto@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"isabellagiraldosoto@gmail.com", "password"=>"[FILTERED]"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 422 Unprocessable Content in 20ms (Views: 1.7ms | ActiveRecord: 3.8ms | Allocations: 13439)
+
+
+Started POST "/sign_up" for ::1 at 2024-09-07 18:46:49 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9:in `create'
+  [1m[36mUser Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/registrations_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Content in 247ms (Views: 2.0ms | ActiveRecord: 9.8ms | Allocations: 15302)
+
+
+Started POST "/sign_up" for ::1 at 2024-09-07 18:46:58 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"isabellagiralds@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"isabellagiralds@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9:in `create'
+  [1m[36mUser Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "isabellagiralds@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:9:in `create'
+  [1m[36mUser Create (5.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "birth_date", "deleted_at", "active", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "authentication_token") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"[0m  [["name", nil], ["username", nil], ["birth_date", nil], ["deleted_at", nil], ["active", true], ["email", "isabellagiralds@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "bb14c334-ac76-4d06-9cd1-bc8c1ad4a4bb"], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil], ["authentication_token", "[FILTERED]"]]
+  ↳ app/controllers/registrations_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/registrations_controller.rb:9:in `create'
+  [1m[36mUser Update (2.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5 WHERE "users"."id" = $6[0m  [["sign_in_count", 1], ["current_sign_in_at", "2024-09-07 23:46:58.952261"], ["last_sign_in_at", "2024-09-07 23:46:58.952261"], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["id", 19]]
+  ↳ app/controllers/registrations_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/registrations_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 263ms (Views: 1.1ms | ActiveRecord: 16.9ms | Allocations: 6805)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:51:29 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiralds@gmail.com", "conversation"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa83561b450>, params: {"to_email"=>"isabellagiralds@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "isabellagiralds@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:58:in `set_recipient'
+  [1m[36mConversationParticipant Load (1.5ms)[0m  [1m[34mSELECT DISTINCT ON (user_id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 19], ["user_id", 19]]
+  ↳ app/models/user.rb:18:in `map'
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa83561b450>, params: {"to_email"=>"isabellagiralds@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/conversations_controller.rb:9:in `new'
+  [1m[36mConversation Create (5.6ms)[0m  [1m[32mINSERT INTO "conversations" ("is_private", "title", "admin_id", "deleted_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["is_private", true], ["title", "New conversation"], ["admin_id", nil], ["deleted_at", nil], ["created_at", "2024-09-07 23:51:29.698743"], ["updated_at", "2024-09-07 23:51:29.698743"]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:9:in `new'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/conversations_controller.rb:9:in `new'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/conversations_controller.rb:15:in `new'
+  [1m[36mConversationParticipant Create (4.4ms)[0m  [1m[32mINSERT INTO "conversation_participants" ("conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["conversation_id", 4], ["user_id", 19], ["created_at", "2024-09-07 23:51:29.734468"], ["updated_at", "2024-09-07 23:51:29.734468"]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:15:in `new'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/conversations_controller.rb:15:in `new'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/conversations_controller.rb:20:in `new'
+  [1m[36mConversationParticipant Create (2.0ms)[0m  [1m[32mINSERT INTO "conversation_participants" ("conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["conversation_id", 4], ["user_id", 19], ["created_at", "2024-09-07 23:51:29.744170"], ["updated_at", "2024-09-07 23:51:29.744170"]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:20:in `new'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/conversations_controller.rb:20:in `new'
+  [1m[36mConversationParticipant Load (0.4ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1[0m  [["conversation_id", 4]]
+  ↳ app/serializers/conversation_serializer.rb:8:in `map'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 19]]
+  ↳ app/serializers/conversation_serializer.rb:8:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 286ms (Views: 1.2ms | ActiveRecord: 30.6ms | Allocations: 123347)
+
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (1.5ms)[0m  [1m[34mSELECT DISTINCT ON (user_id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:53:13 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiralds@gmail.com", "conversation"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa834596008>, params: {"to_email"=>"isabellagiralds@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "isabellagiralds@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:60:in `set_recipient'
+  [1m[36mConversationParticipant Load (0.9ms)[0m  [1m[34mSELECT DISTINCT ON (user_id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 19], ["user_id", 19]]
+  ↳ app/models/user.rb:18:in `map'
+No template found for Api::V1::ConversationsController#new, rendering head :no_content
+Completed 204 No Content in 40ms (ActiveRecord: 11.1ms | Allocations: 19861)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:54:06 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiralds@gmail.com", "conversation"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa8353557c0>, params: {"to_email"=>"isabellagiralds@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "isabellagiralds@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:60:in `set_recipient'
+  [1m[36mConversationParticipant Load (0.8ms)[0m  [1m[34mSELECT DISTINCT ON (user_id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 19], ["user_id", 19]]
+  ↳ app/models/user.rb:18:in `map'
+No template found for Api::V1::ConversationsController#new, rendering head :no_content
+Completed 204 No Content in 37ms (ActiveRecord: 10.2ms | Allocations: 19981)
+
+
+  [1m[36mConversation Load (0.8ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for pp */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversationParticipant Load (0.8ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."user_id" = $1 /* loading for pp */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:55:50 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiralds@gmail.com", "conversation"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa8486bda08>, params: {"to_email"=>"isabellagiralds@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "isabellagiralds@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:61:in `set_recipient'
+  [1m[36mConversationParticipant Load (1.0ms)[0m  [1m[34mSELECT DISTINCT ON (user_id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 19], ["user_id", 19]]
+  ↳ app/models/user.rb:18:in `map'
+No template found for Api::V1::ConversationsController#new, rendering head :no_content
+Completed 204 No Content in 38ms (ActiveRecord: 9.3ms | Allocations: 20104)
+
+
+Started POST "/login" for ::1 at 2024-09-07 18:56:15 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mUser Update (2.8ms)[0m  [1m[33mUPDATE "users" SET "authentication_token" = $1 WHERE "users"."id" = $2[0m  [["authentication_token", "[FILTERED]"], ["id", 19]]
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 20ms (Views: 1.5ms | ActiveRecord: 6.5ms | Allocations: 7180)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:56:38 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiralds@gmail.com", "conversation"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa834322d08>, params: {"to_email"=>"isabellagiralds@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "isabellagiralds@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:61:in `set_recipient'
+  [1m[36mConversationParticipant Load (0.9ms)[0m  [1m[34mSELECT DISTINCT ON (user_id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 19], ["user_id", 19]]
+  ↳ app/models/user.rb:18:in `map'
+No template found for Api::V1::ConversationsController#new, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 1.7ms | Allocations: 3706)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:56:49 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiralds@gmail.com", "conversation"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa8343a6978>, params: {"to_email"=>"isabellagiralds@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "isabellagiralds@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:61:in `set_recipient'
+  [1m[36mConversationParticipant Load (1.0ms)[0m  [1m[34mSELECT DISTINCT ON (user_id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 19], ["user_id", 19]]
+  ↳ app/models/user.rb:18:in `map'
+No template found for Api::V1::ConversationsController#new, rendering head :no_content
+Completed 204 No Content in 10ms (ActiveRecord: 1.7ms | Allocations: 3402)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:57:16 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiralds@gmail.com", "conversation"=>{}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 602)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 18:57:25 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiralds@gmail.com", "conversation"=>{}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 586)
+
+
+Started POST "/login" for ::1 at 2024-09-07 18:57:34 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Update (2.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 10], ["current_sign_in_at", "2024-09-07 23:57:34.830677"], ["last_sign_in_at", "2024-09-07 23:41:23.481197"], ["id", 18]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mUser Update (2.2ms)[0m  [1m[33mUPDATE "users" SET "authentication_token" = $1 WHERE "users"."id" = $2[0m  [["authentication_token", "[FILTERED]"], ["id", 18]]
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 255ms (Views: 0.6ms | ActiveRecord: 11.8ms | Allocations: 5752)
+
+
+Started POST "/login" for ::1 at 2024-09-07 18:59:21 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Update (3.2ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 11], ["current_sign_in_at", "2024-09-07 23:59:22.167574"], ["last_sign_in_at", "2024-09-07 23:57:34.830677"], ["id", 18]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 259ms (Views: 0.9ms | ActiveRecord: 6.9ms | Allocations: 3799)
+
+
+Started POST "/v1/api/conversations" for ::1 at 2024-09-07 19:01:25 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/v1/api/conversations"):
+  
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 19:01:41 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiralds@gmail.com", "conversation"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa83531e680>, params: {"to_email"=>"isabellagiralds@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "isabellagiralds@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:61:in `set_recipient'
+  [1m[36mConversationParticipant Load (1.7ms)[0m  [1m[34mSELECT DISTINCT ON (user_id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  ↳ app/models/user.rb:18:in `map'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+  ↳ app/models/user.rb:18:in `map'
+No template found for Api::V1::ConversationsController#new, rendering head :no_content
+Completed 204 No Content in 25ms (ActiveRecord: 5.5ms | Allocations: 7817)
+
+
+Started POST "/api/v1/conversations" for ::1 at 2024-09-07 19:02:04 -0500
+Processing by Api::V1::ConversationsController#new as JSON
+  Parameters: {"to_email"=>"isabellagiralds@gmail.com", "conversation"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa84803a938>, params: {"to_email"=>"isabellagiralds@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "isabellagiralds@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:61:in `set_recipient'
+  [1m[36mConversationParticipant Load (0.8ms)[0m  [1m[34mSELECT DISTINCT ON (user_id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  ↳ app/models/user.rb:18:in `map'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 6], ["id", 14]]
+  ↳ app/models/user.rb:18:in `map'
+[31mUnpermitted parameters: :format, :conversation. Context: { controller: Api::V1::ConversationsController, action: new, request: #<ActionDispatch::Request:0x00007fa84803a938>, params: {"to_email"=>"isabellagiralds@gmail.com", "format"=>"json", "controller"=>"api/v1/conversations", "action"=>"new", "conversation"=>{}} }[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/conversations_controller.rb:12:in `new'
+  [1m[36mConversation Create (2.1ms)[0m  [1m[32mINSERT INTO "conversations" ("is_private", "title", "admin_id", "deleted_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["is_private", true], ["title", "New conversation"], ["admin_id", nil], ["deleted_at", nil], ["created_at", "2024-09-08 00:02:04.999822"], ["updated_at", "2024-09-08 00:02:04.999822"]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:12:in `new'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/conversations_controller.rb:12:in `new'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/conversations_controller.rb:18:in `new'
+  [1m[36mConversationParticipant Create (1.8ms)[0m  [1m[32mINSERT INTO "conversation_participants" ("conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["conversation_id", 5], ["user_id", 18], ["created_at", "2024-09-08 00:02:05.008249"], ["updated_at", "2024-09-08 00:02:05.008249"]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:18:in `new'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/conversations_controller.rb:18:in `new'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/conversations_controller.rb:23:in `new'
+  [1m[36mConversationParticipant Create (2.8ms)[0m  [1m[32mINSERT INTO "conversation_participants" ("conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["conversation_id", 5], ["user_id", 19], ["created_at", "2024-09-08 00:02:05.015235"], ["updated_at", "2024-09-08 00:02:05.015235"]]
+  ↳ app/controllers/api/v1/conversations_controller.rb:23:in `new'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/conversations_controller.rb:23:in `new'
+  [1m[36mConversationParticipant Load (0.6ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" = $1[0m  [["conversation_id", 5]]
+  ↳ app/serializers/conversation_serializer.rb:8:in `map'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 18], ["id", 19]]
+  ↳ app/serializers/conversation_serializer.rb:8:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 74ms (Views: 1.7ms | ActiveRecord: 27.8ms | Allocations: 39296)
+
+
+  [1m[36mConversationParticipant Load (1.7ms)[0m  [1m[34mSELECT DISTINCT ON (user_id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 6], ["id", 14], ["id", 19]]
+  [1m[36mConversation Load (1.2ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for pp */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/cable?token=[FILTERED]" for 127.0.0.1 at 2024-09-07 19:33:56 -0500
+Started GET "/cable?token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-09-07 19:33:56 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+There was an exception - NameError(undefined local variable or method `params' for #<ApplicationCable::Connection:0x00000000054470>)
+/home/camilo99/Files/chat-app/app/channels/application_cable/connection.rb:9:in `find_verified_user'
+/home/camilo99/Files/chat-app/app/channels/application_cable/connection.rb:4:in `connect'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/connection/base.rb:186:in `handle_open'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker.rb:58:in `block in invoke'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `block in tagged'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:39:in `tagged'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `tagged'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/broadcast_logger.rb:240:in `method_missing'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/connection/tagged_logger_proxy.rb:26:in `tag'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker/active_record_connection_management.rb:16:in `with_database_connections'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/engine.rb:79:in `block (4 levels) in <class:Engine>'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/engine.rb:74:in `block (3 levels) in <class:Engine>'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker.rb:41:in `work'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker.rb:57:in `invoke'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker.rb:52:in `block in async_invoke'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `loop'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Finished "/cable?token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-09-07 19:34:00 -0500
+Started GET "/cable?token=[FILTERED]" for 127.0.0.1 at 2024-09-07 19:35:12 -0500
+Started GET "/cable?token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-09-07 19:35:12 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+There was an exception - NameError(undefined local variable or method `params' for #<ApplicationCable::Connection:0x0000000005a898>)
+/home/camilo99/Files/chat-app/app/channels/application_cable/connection.rb:11:in `find_verified_user'
+/home/camilo99/Files/chat-app/app/channels/application_cable/connection.rb:6:in `connect'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/connection/base.rb:186:in `handle_open'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker.rb:58:in `block in invoke'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `block in tagged'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:39:in `tagged'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `tagged'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/broadcast_logger.rb:240:in `method_missing'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/connection/tagged_logger_proxy.rb:26:in `tag'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker/active_record_connection_management.rb:16:in `with_database_connections'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/engine.rb:79:in `block (4 levels) in <class:Engine>'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/engine.rb:74:in `block (3 levels) in <class:Engine>'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker.rb:41:in `work'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker.rb:57:in `invoke'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker.rb:52:in `block in async_invoke'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `loop'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Finished "/cable?token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-09-07 19:35:17 -0500
+Started GET "/cable?token=[FILTERED]" for 127.0.0.1 at 2024-09-07 19:35:44 -0500
+Started GET "/cable?token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-09-07 19:35:44 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+There was an exception - NameError(undefined local variable or method `params' for #<ApplicationCable::Connection:0x00000000060c98>)
+/home/camilo99/Files/chat-app/app/channels/application_cable/connection.rb:11:in `find_verified_user'
+/home/camilo99/Files/chat-app/app/channels/application_cable/connection.rb:6:in `connect'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/connection/base.rb:186:in `handle_open'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker.rb:58:in `block in invoke'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `block in tagged'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:39:in `tagged'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/tagged_logging.rb:135:in `tagged'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/broadcast_logger.rb:240:in `method_missing'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/connection/tagged_logger_proxy.rb:26:in `tag'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker/active_record_connection_management.rb:16:in `with_database_connections'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/engine.rb:79:in `block (4 levels) in <class:Engine>'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/engine.rb:74:in `block (3 levels) in <class:Engine>'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `instance_exec'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+/var/lib/gems/3.0.0/gems/activesupport-7.1.3.4/lib/active_support/callbacks.rb:141:in `run_callbacks'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker.rb:41:in `work'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker.rb:57:in `invoke'
+/var/lib/gems/3.0.0/gems/actioncable-7.1.3.4/lib/action_cable/server/worker.rb:52:in `block in async_invoke'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `loop'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+/var/lib/gems/3.0.0/gems/concurrent-ruby-1.3.3/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Finished "/cable?token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-09-07 19:39:31 -0500
+Started GET "/cable?token=[FILTERED]" for 127.0.0.1 at 2024-09-07 19:39:32 -0500
+Started GET "/cable?token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-09-07 19:39:32 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = $1 LIMIT $2[0m  [["authentication_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11:in `find_verified_user'
+An unauthorized connection attempt was rejected
+Finished "/cable?token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-09-07 19:39:32 -0500
+Started GET "/cable?token=[FILTERED]" for 127.0.0.1 at 2024-09-07 19:39:39 -0500
+Started GET "/cable?token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-09-07 19:39:39 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = $1 LIMIT $2[0m  [["authentication_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11:in `find_verified_user'
+An unauthorized connection attempt was rejected
+Finished "/cable?token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-09-07 19:39:39 -0500
+Started POST "/login" for ::1 at 2024-09-07 19:41:04 -0500
+  
+SyntaxError (/home/camilo99/Files/chat-app/app/controllers/sessions_controller.rb:51: syntax error, unexpected '\n', expecting =>):
+  
+app/controllers/sessions_controller.rb:51: syntax error, unexpected '\n', expecting =>
+Started POST "/login" for ::1 at 2024-09-07 19:41:51 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[31mUnpermitted parameter: :password. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fa854d58640>, params: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 200 OK in 37ms (Views: 2.6ms | ActiveRecord: 13.1ms | Allocations: 14667)
+
+
+Started POST "/login" for ::1 at 2024-09-07 19:42:49 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[31mUnpermitted parameter: :password. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fa8346b92f0>, params: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}} }[0m
+[31mUnpermitted parameter: :password. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fa8346b92f0>, params: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 24ms (Views: 1.8ms | ActiveRecord: 6.1ms | Allocations: 14683)
+
+
+Started POST "/login" for ::1 at 2024-09-07 19:43:46 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[31mUnpermitted parameter: :password. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fa8355b66e0>, params: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 27ms (Views: 2.2ms | ActiveRecord: 5.5ms | Allocations: 14561)
+
+
+Started POST "/login" for ::1 at 2024-09-07 19:44:11 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"isabellagiralds@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"isabellagiralds@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[31mUnpermitted parameter: :password. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00005576b63f10b0>, params: {"user"=>{"email"=>"isabellagiralds@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"isabellagiralds@gmail.com", "password"=>"[FILTERED]"}}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mUser Update (4.0ms)[0m  [1m[33mUPDATE "users" SET "authentication_token" = $1 WHERE "users"."id" = $2[0m  [["authentication_token", "[FILTERED]"], ["id", 18]]
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 15ms (Views: 0.7ms | ActiveRecord: 8.0ms | Allocations: 3899)
+
+
+Started POST "/login" for ::1 at 2024-09-07 19:44:18 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"isabellagiralds@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"isabellagiralds@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "isabellagiralds@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Update (2.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2 WHERE "users"."id" = $3[0m  [["sign_in_count", 2], ["current_sign_in_at", "2024-09-08 00:44:19.193973"], ["id", 19]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+[31mUnpermitted parameter: :password. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007fa854c023b8>, params: {"user"=>{"email"=>"isabellagiralds@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"isabellagiralds@gmail.com", "password"=>"[FILTERED]"}}} }[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mUser Update (2.5ms)[0m  [1m[33mUPDATE "users" SET "authentication_token" = $1 WHERE "users"."id" = $2[0m  [["authentication_token", "[FILTERED]"], ["id", 19]]
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 251ms (Views: 0.7ms | ActiveRecord: 11.3ms | Allocations: 5804)
+
+
+Started POST "/login" for ::1 at 2024-09-07 19:45:22 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"isabellagiralds@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"isabellagiralds@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mUser Update (2.1ms)[0m  [1m[33mUPDATE "users" SET "authentication_token" = $1 WHERE "users"."id" = $2[0m  [["authentication_token", "[FILTERED]"], ["id", 19]]
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 29ms (Views: 1.8ms | ActiveRecord: 9.6ms | Allocations: 16208)
+
+
+Started POST "/login" for ::1 at 2024-09-07 19:45:51 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mUser Update (2.3ms)[0m  [1m[33mUPDATE "users" SET "authentication_token" = $1 WHERE "users"."id" = $2[0m  [["authentication_token", "[FILTERED]"], ["id", 19]]
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 6.6ms | Allocations: 3736)
+
+
+Started POST "/login" for ::1 at 2024-09-07 19:46:02 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999andres1gutierreztorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999andres1gutierreztorres@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 12], ["current_sign_in_at", "2024-09-08 00:46:02.298527"], ["last_sign_in_at", "2024-09-07 23:59:22.167574"], ["id", 18]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "authentication_token" = $1 WHERE "users"."id" = $2[0m  [["authentication_token", "[FILTERED]"], ["id", 18]]
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:17:in `respond_with'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 257ms (Views: 0.7ms | ActiveRecord: 10.3ms | Allocations: 5687)
+
+
+Started GET "/cable?token=[FILTERED]" for 127.0.0.1 at 2024-09-07 19:46:38 -0500
+Started GET "/cable?token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-09-07 19:46:38 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."authentication_token" = $1 LIMIT $2[0m  [["authentication_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:11:in `find_verified_user'
+Registered connection (Z2lkOi8vY2hhdC1hcHAvVXNlci8xOQ)
+Finished "/cable?token=[FILTERED]" [WebSocket] for 127.0.0.1 at 2024-09-07 19:46:48 -0500

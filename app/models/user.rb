@@ -13,6 +13,7 @@ class User < ApplicationRecord
     ConversationParticipant
       .where(conversation_id: conversations.select(:id))
       .where.not(user_id: id)
+      .select('DISTINCT ON (user_id) *')
       .includes(:user)
       .map(&:user)
   end
