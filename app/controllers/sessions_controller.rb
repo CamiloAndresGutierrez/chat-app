@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class SessionsController < Devise::SessionsController
+  skip_before_action :authenticate_user!, only: [:create, :destroy]
   respond_to :json
 
   def create
@@ -13,9 +14,6 @@ class SessionsController < Devise::SessionsController
 
   private
   def respond_with(current_user, _opts = {})
-    auth_token = JWT.encode(current_user, Rails.application.credentials.devise_jwt_secret_key!)
-    current_user.update!(authentication_token: auth_token)
-
     render json: {
       success: true,
       data: UserSerializer.new(current_user)
@@ -28,8 +26,6 @@ class SessionsController < Devise::SessionsController
       current_user = User.find(jwt_payload['sub'])
     end
 
-    current_user.update(authentication_token: nil)
-    
     if current_user
       render json: {
         status: 200,

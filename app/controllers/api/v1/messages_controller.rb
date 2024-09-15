@@ -5,16 +5,13 @@ module Api::V1
         def new
             raise 'User has no access to this conversation.' if @conversation.conversation_participants.find_by(user_id: current_user.id).nil?
 
-        new_message = current_user.messages.create!(
-            conversation: @conversation,
-            content: params['content']
-        )
+            new_message = Message.create!(
+                conversation_id: @conversation&.id,
+                content: params['content'],
+                user_id: current_user&.id
+            )
 
-        if (new_message.present?)
-            ConversationsChannel.broadcast_to(@conversation, new_message)
-        end
-
-        render json: { success: true, message: MessageSerializer.new(new_message) }, status: :created
+            render json: { success: true, message: MessageSerializer.new(new_message) }, status: :created
         rescue ActiveRecord::RecordNotFound => e
             render json: { success: false, message: e.message }, status: :not_found
         rescue StandardError => e

@@ -1,11 +1,37 @@
 class ApplicationController < ActionController::API
-
-  before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
 
-  protected
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name username birth_date])
-    devise_parameter_sanitizer.permit(:account_update, keys: %i[name username birth_date])
+  private
+
+  def authenticate_user!
+    token = extract_token_from_header
+
+    if token
+      payload = decode_jwt(token)
+      user_id = payload['sub']
+      @current_user = User.find_by(id: user_id)
+
+      if @current_user.nil?
+        render_unauthorized('Invalid user')
+      end
+    else
+      render_unauthorized('Authorization token missing')
+    end
+  rescue JWT::ExpiredSignature
+    render_unauthorized('Token has expired')
+  rescue JWT::DecodeError
+    render_unauthorized('Invalid token')
+  end
+
+  def extract_token_from_header
+    request.headers['Authorization']&.split(' ')&.last
+  end
+
+  def decode_jwt(token)
+    JWT.decode(token, Rails.application.credentials[:devise_jwt_secret_key]).first
+  end
+
+  def render_unauthorized(message)
+    render json: { error: message }, status: :unauthorized
   end
 end

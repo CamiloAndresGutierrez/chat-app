@@ -19,21 +19,12 @@ module ChatApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
-    def encode_token(payload)
-      JWT.encode(payload, Rails.application.credentials.devise_jwt_secret_key!) 
-    end
+    config.api_only = true
 
-    def decoded_token
-        header = request.headers['Authorization']
-        if header
-            token = header.split(" ")[1]
-            begin
-                JWT.decode(token, Rails.application.credentials.devise_jwt_secret_key!)
-            rescue JWT::DecodeError
-                nil
-            end
-        end
-    end
-
+    # Remove middleware related to cookies and sessions
+    config.middleware.delete ActionDispatch::Cookies
+    config.middleware.delete ActionDispatch::Session::CookieStore
+    config.middleware.delete ActionDispatch::Flash
+    config.middleware.delete ActionDispatch::ContentSecurityPolicy::Middleware
   end
 end

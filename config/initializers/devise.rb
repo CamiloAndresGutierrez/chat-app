@@ -26,6 +26,9 @@ Devise.setup do |config|
   config.responder.error_status = :unprocessable_entity
   config.responder.redirect_status = :see_other
 
+  config.timeout_in = 24.hours.to_i
+
+  config.skip_session_storage = [:http_auth, :params_auth]
 
   # ==> JWT configuration
   config.jwt do |jwt|
@@ -36,6 +39,6 @@ Devise.setup do |config|
     jwt.revocation_requests = [
       ['DELETE', %r{^/logout$}]
     ]
-    jwt.expiration_time = 30.minutes.to_i
+    jwt.expiration_time = 24.hours.to_i
   end
 end
