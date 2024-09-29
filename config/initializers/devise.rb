@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Devise.setup do |config|
-
   require 'devise/orm/active_record'
 
   config.case_insensitive_keys = [:email]
@@ -28,7 +27,7 @@ Devise.setup do |config|
 
   config.timeout_in = 24.hours.to_i
 
-  config.skip_session_storage = [:http_auth, :params_auth]
+  config.skip_session_storage = %i[http_auth params_auth]
 
   # ==> JWT configuration
   config.jwt do |jwt|

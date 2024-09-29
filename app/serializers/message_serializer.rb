@@ -1,4 +1,3 @@
 class MessageSerializer < ActiveModel::Serializer
-    attributes :content
-  end
-  
+  attributes :content
+end

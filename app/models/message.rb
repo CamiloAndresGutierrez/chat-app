@@ -1,12 +1,12 @@
 class Message < ApplicationRecord
-    belongs_to :user
-    belongs_to :conversation
+  belongs_to :user
+  belongs_to :conversation
 
-    after_create :broadcast_message
+  after_create :broadcast_message
 
-    private
+  private
 
-    def broadcast_message
-        ActionCable.server.broadcast("conversation_#{conversation.id}", self.as_json)
-    end
+  def broadcast_message
+    ActionCable.server.broadcast("conversation_#{conversation.id}", as_json)
+  end
 end

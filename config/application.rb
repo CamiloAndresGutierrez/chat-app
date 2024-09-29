@@ -1,6 +1,6 @@
-require_relative "boot"
+require_relative 'boot'
 
-require "rails/all"
+require 'rails/all'
 
 require 'devise'
 require 'devise/jwt'
@@ -10,9 +10,7 @@ require 'devise/jwt'
 Bundler.require(*Rails.groups)
 
 # Load .env file in development and test environments
-if Rails.env.development? || Rails.env.test?
-  Dotenv::Rails.load
-end
+Dotenv::Rails.load if Rails.env.development? || Rails.env.test?
 
 module ChatApp
   class Application < Rails::Application

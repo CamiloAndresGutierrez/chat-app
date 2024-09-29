@@ -10,7 +10,7 @@ module ApplicationCable
 
     def authenticated_user!
       token = extract_token_from_header
-      reject_unauthorized_connection unless token 
+      reject_unauthorized_connection unless token
 
       payload = decode_jwt(token)
       user_id = payload['sub']
@@ -20,14 +20,14 @@ module ApplicationCable
       raise StandardError unless current_user.present?
 
       current_user
-    rescue StandardError => e
+    rescue StandardError
       reject_unauthorized_connection
     end
-  
+
     def extract_token_from_header
       request.headers['Authorization']&.split(' ')&.last
     end
-  
+
     def decode_jwt(token)
       JWT.decode(token, Rails.application.credentials[:devise_jwt_secret_key]).first
     end

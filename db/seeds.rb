@@ -9,9 +9,9 @@
 #   end
 
 User.create(
-    name: "User",
-    username: "User1",
-    birth_date: "05/May/1999".to_datetime,
-    active: true,
-    email: "camilo1999gutierrez@gmail.com"
+  name: 'User',
+  username: 'User1',
+  birth_date: '05/May/1999'.to_datetime,
+  active: true,
+  email: 'camilo1999gutierrez@gmail.com'
 )

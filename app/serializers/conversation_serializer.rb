@@ -7,6 +7,7 @@ class ConversationSerializer < ActiveModel::Serializer
 
     object.conversation_participants.includes(:user).map do |participant|
       next if current_user_id == participant.user.id
+
       {
         id: participant.user.id,
         name: participant.user.name,

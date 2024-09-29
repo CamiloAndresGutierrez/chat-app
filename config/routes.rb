@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     post '/sign_up' => 'registrations#create'
   end
 
-  namespace :api, defaults: {format: 'json'} do
+  namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
       get 'users/get_contacts' => 'users#get_contacts'
       get '/conversations' => 'conversations#show'
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  mount ActionCable.server => "/cable"
+  mount ActionCable.server => '/cable'
 
   resources :users
   resources :messages

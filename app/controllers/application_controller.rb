@@ -11,9 +11,7 @@ class ApplicationController < ActionController::API
       user_id = payload['sub']
       @current_user = User.find_by(id: user_id)
 
-      if @current_user.nil?
-        render_unauthorized('Invalid user')
-      end
+      render_unauthorized('Invalid user') if @current_user.nil?
     else
       render_unauthorized('Authorization token missing')
     end

@@ -13,17 +13,17 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
 
-
   private
+
   def respond_with(current_user, _opts = {})
     if resource.persisted?
       render json: {
-      success: true,
-      data: UserSerializer.new(current_user)
-    }, status: :ok
+        success: true,
+        data: UserSerializer.new(current_user)
+      }, status: :ok
     else
       render json: {
-        status: {message: "User couldn't be created successfully. #{current_user.errors.full_messages.to_sentence}"}
+        status: { message: "User couldn't be created successfully. #{current_user.errors.full_messages.to_sentence}" }
       }, status: :unprocessable_entity
     end
   end
