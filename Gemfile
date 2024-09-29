@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 ruby '3.0.2'
@@ -54,7 +56,6 @@ gem 'devise-jwt'
 gem 'jsonapi-serializer'
 gem 'jwt'
 gem 'rack-cors'
-gem 'rubocop-rails', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -71,6 +72,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'pre-commit', require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
 end
 
 group :test do

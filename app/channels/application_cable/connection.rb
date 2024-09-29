@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
     identified_by :current_user
@@ -17,7 +19,7 @@ module ApplicationCable
 
       current_user = User.find_by(id: user_id)
 
-      raise StandardError unless current_user.present?
+      raise StandardError if current_user.blank?
 
       current_user
     rescue StandardError

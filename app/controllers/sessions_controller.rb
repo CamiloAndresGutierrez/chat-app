@@ -4,14 +4,6 @@ class SessionsController < Devise::SessionsController
   skip_before_action :authenticate_user!, only: %i[create destroy]
   respond_to :json
 
-  def create
-    super
-  end
-
-  def destroy
-    super
-  end
-
   private
 
   def respond_with(current_user, _opts = {})

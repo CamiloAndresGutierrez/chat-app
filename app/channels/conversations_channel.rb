@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ConversationsChannel < ApplicationCable::Channel
   def subscribed
     user_conversations = Conversation.joins(:conversation_participants).where(conversation_participants: { user_id: current_user.id })

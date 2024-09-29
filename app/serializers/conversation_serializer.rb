@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ConversationSerializer < ActiveModel::Serializer
   attributes :id, :title, :is_private, :admin_id
   attribute :participants
