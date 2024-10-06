@@ -1,22 +1,40 @@
 # frozen_string_literal: true
 
+# Controller in charge of user registrations
 class RegistrationsController < Devise::RegistrationsController
+  skip_before_action :authenticate_user!, only: %i[create]
   respond_to :json
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+
+  def create
+    validate_new_user
+
+    super
+  rescue StandardError => e
+    render json: { message: "User couldn't be created successfully: #{e}" }, status: :unprocessable_entity
+  end
 
   private
 
+  def registration_params
+    params.permit(
+      :email
+    )
+  end
+
+  def validate_new_user
+    user = User.find_by(email: registration_params[:email])
+
+    return if user.present?
+
+    raise 'User already exists'
+  end
+
   def respond_with(current_user, _opts = {})
-    if resource.persisted?
-      render json: {
-        success: true,
-        data: UserSerializer.new(current_user)
-      }, status: :ok
-    else
-      render json: {
-        status: { message: "User couldn't be created successfully. #{current_user.errors.full_messages.to_sentence}" }
-      }, status: :unprocessable_entity
-    end
+    return unless current_user
+
+    render json: {
+      success: true,
+      data: UserSerializer.new(current_user)
+    }, status: :ok
   end
 end

@@ -2,28 +2,17 @@
 
 module Api
   module V1
+    # Controller in charge of managing Conversations data and logic
     class ConversationsController < ApplicationController
       before_action :set_recipient, only: [:new]
       before_action :set_conversation, only: [:index]
 
       def new
-        raise 'Conversation already exists' unless should_create?
+        validate_conversation
+        new_conversation = create_conversation_with_participants
 
-        new_conversation = Conversation.create!(
-          admin_id: @recipient.present? ? nil : current_user.id,
-          title: conversation_params[:title] || 'New conversation',
-          is_private: @recipient.present?
-        )
-
-        new_conversation.conversation_participants.create!(
-          user: current_user
-        )
-
-        new_conversation.conversation_participants.create!(user: @recipient) if @recipient.present?
-
-        serialized_conversation = ConversationSerializer.new(new_conversation, scope: current_user.id)
-        response = { success: true, conversation: serialized_conversation.as_json }
-        render json: response
+        render json: { success: true,
+                       conversation: ConversationSerializer.new(new_conversation, scope: current_user.id) }
       rescue StandardError => e
         render json: { success: false, message: e.message }, status: :unprocessable_entity
       end
@@ -45,12 +34,33 @@ module Api
 
       private
 
-      def should_create?
+      def validate_conversation
         conversation_exists = current_user.contacts.any? do |contact|
-          contact.id === @recipient.id
+          contact.id == @recipient.id
         end
 
-        conversation_exists.blank?
+        raise 'Conversation already exists' if conversation_exists
+      end
+
+      def create_conversation_with_participants
+        new_conversation = Conversation.create!(
+          admin_id: @recipient.present? ? nil : current_user.id,
+          title: conversation_params[:title] || 'New conversation',
+          is_private: @recipient.present?
+        )
+
+        new_conversation.conversation_participants.create!(
+          user: current_user
+        )
+
+        add_participant(new_conversation, current_user)
+        add_participant(new_conversation, @recipient) if @recipient.present?
+      end
+
+      def add_participant(conversation, participant)
+        conversation.conversation_participants.create!(
+          user: participant
+        )
       end
 
       def set_conversation

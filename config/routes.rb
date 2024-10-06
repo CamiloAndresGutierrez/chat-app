@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
-      get 'users/get_contacts' => 'users#get_contacts'
+      get 'users/contacts' => 'users#contacts'
       get '/conversations' => 'conversations#show'
       post '/conversations' => 'conversations#new'
       get '/conversations/:conversation_id' => 'conversations#index'

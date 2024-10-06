@@ -2,19 +2,14 @@
 
 module Api
   module V1
+    # Controller in charge of managing Messages data and logic
     class MessagesController < ApplicationController
       before_action :set_conversation
 
       def new
-        if @conversation.conversation_participants.find_by(user_id: current_user.id).nil?
-          raise 'User has no access to this conversation.'
-        end
+        validate_conversation_participant!
 
-        new_message = Message.create!(
-          conversation_id: @conversation&.id,
-          content: params['content'],
-          user_id: current_user&.id
-        )
+        create_new_message
 
         render json: { success: true, message: MessageSerializer.new(new_message) }, status: :created
       rescue ActiveRecord::RecordNotFound => e
@@ -30,12 +25,29 @@ module Api
 
       private
 
+      def validate_conversation_participant
+        return if @conversation.conversation_participants.find_by(user_id: current_user.id).blank?
+
+        raise 'User has no access to this conversation.'
+      end
+
+      def create_new_message
+        Message.create!(
+          conversation_id: @conversation&.id,
+          content: message_params[:content],
+          user_id: current_user&.id
+        )
+      end
+
       def set_conversation
         @conversation = Conversation.find_by!(id: params[:conversation_id])
       end
 
       def message_params
-        params.require(:conversation_id, :content)
+        params.require(
+          :conversation_id,
+          :content
+        )
       end
     end
   end

@@ -27035,3 +27035,656 @@ ConversationsChannel stopped streaming from conversation_5
 Finished "/cable/%7C" [WebSocket] for 127.0.0.1 at 2024-09-14 21:17:19 -0500
 ConversationsChannel stopped streaming from conversation_1
 ConversationsChannel stopped streaming from conversation_2
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/register" for ::1 at 2024-10-05 20:32:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/register"):
+  
+Started POST "/sign_up" for ::1 at 2024-10-05 20:33:07 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierres@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierres@gmail.com", "password"=>"[FILTERED]"}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 3690)
+
+
+Started POST "/sign_up" for ::1 at 2024-10-05 20:34:04 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierres@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (5.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "birth_date", "deleted_at", "active", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["name", nil], ["username", nil], ["birth_date", nil], ["deleted_at", nil], ["active", true], ["email", "camilo1999gutierres@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "6f519942-e770-42e6-a132-de5cca3b184d"], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 484ms (ActiveRecord: 44.5ms | Allocations: 272283)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+actionpack (7.1.3.4) lib/action_dispatch/request/session.rb:260:in `load_for_write!'
+actionpack (7.1.3.4) lib/action_dispatch/request/session.rb:153:in `[]='
+warden (1.2.9) lib/warden/session_serializer.rb:27:in `store'
+warden (1.2.9) lib/warden/proxy.rb:187:in `set_user'
+devise (4.9.4) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise (4.9.4) app/controllers/devise/registrations_controller.rb:106:in `sign_up'
+devise (4.9.4) app/controllers/devise/registrations_controller.rb:24:in `create'
+actionpack (7.1.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.4) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/mapper.rb:21:in `block in <class:Constraints>'
+actionpack (7.1.3.4) lib/action_dispatch/routing/mapper.rb:51:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:882:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (3.1.6) lib/rack/builder.rb:277:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware.rb:22:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.6) lib/rack/etag.rb:29:in `call'
+rack (3.1.6) lib/rack/conditional_get.rb:43:in `call'
+rack (3.1.6) lib/rack/head.rb:15:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.6) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.6) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started POST "/sign_up" for ::1 at 2024-10-05 20:38:17 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierres@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 422 Unprocessable Content in 280ms (Views: 1.5ms | ActiveRecord: 5.0ms | Allocations: 9396)
+
+
+Started POST "/sign_up" for ::1 at 2024-10-05 20:38:26 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorresss@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorresss@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorresss@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "birth_date", "deleted_at", "active", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["name", nil], ["username", nil], ["birth_date", nil], ["deleted_at", nil], ["active", true], ["email", "camilo1999gutierrestorresss@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "ec5d143d-c453-4dc6-bdfd-e62face59b3e"], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 368ms (ActiveRecord: 7.1ms | Allocations: 4701)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+actionpack (7.1.3.4) lib/action_dispatch/request/session.rb:260:in `load_for_write!'
+actionpack (7.1.3.4) lib/action_dispatch/request/session.rb:153:in `[]='
+warden (1.2.9) lib/warden/session_serializer.rb:27:in `store'
+warden (1.2.9) lib/warden/proxy.rb:187:in `set_user'
+devise (4.9.4) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise (4.9.4) app/controllers/devise/registrations_controller.rb:106:in `sign_up'
+devise (4.9.4) app/controllers/devise/registrations_controller.rb:24:in `create'
+actionpack (7.1.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.4) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/mapper.rb:21:in `block in <class:Constraints>'
+actionpack (7.1.3.4) lib/action_dispatch/routing/mapper.rb:51:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:882:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (3.1.6) lib/rack/builder.rb:277:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware.rb:22:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.6) lib/rack/etag.rb:29:in `call'
+rack (3.1.6) lib/rack/conditional_get.rb:43:in `call'
+rack (3.1.6) lib/rack/head.rb:15:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.6) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.6) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started POST "/sign_up" for ::1 at 2024-10-05 20:38:29 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorresss@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorresss@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorresss@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 422 Unprocessable Content in 247ms (Views: 0.6ms | ActiveRecord: 3.7ms | Allocations: 4077)
+
+
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorresss"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorresss@gmail.com"], ["LIMIT", 1]]
+Started POST "/sign_up" for ::1 at 2024-10-05 20:39:44 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorrs@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorrs@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorrs@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "birth_date", "deleted_at", "active", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["name", nil], ["username", nil], ["birth_date", nil], ["deleted_at", nil], ["active", true], ["email", "camilo1999gutierrestorrs@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "149566b4-9e7b-4375-978e-ca7f73723b7f"], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 243ms (ActiveRecord: 6.0ms | Allocations: 4699)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+actionpack (7.1.3.4) lib/action_dispatch/request/session.rb:260:in `load_for_write!'
+actionpack (7.1.3.4) lib/action_dispatch/request/session.rb:153:in `[]='
+warden (1.2.9) lib/warden/session_serializer.rb:27:in `store'
+warden (1.2.9) lib/warden/proxy.rb:187:in `set_user'
+devise (4.9.4) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise (4.9.4) app/controllers/devise/registrations_controller.rb:106:in `sign_up'
+devise (4.9.4) app/controllers/devise/registrations_controller.rb:24:in `create'
+actionpack (7.1.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.4) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/mapper.rb:21:in `block in <class:Constraints>'
+actionpack (7.1.3.4) lib/action_dispatch/routing/mapper.rb:51:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:882:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (3.1.6) lib/rack/builder.rb:277:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware.rb:22:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.6) lib/rack/etag.rb:29:in `call'
+rack (3.1.6) lib/rack/conditional_get.rb:43:in `call'
+rack (3.1.6) lib/rack/head.rb:15:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.6) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.6) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started POST "/sign_up" for ::1 at 2024-10-05 20:41:29 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorrs@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorrs@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorrs@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 422 Unprocessable Content in 244ms (Views: 0.7ms | ActiveRecord: 3.6ms | Allocations: 4060)
+
+
+Started POST "/sign_up" for ::1 at 2024-10-05 20:41:33 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorres@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (12.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "birth_date", "deleted_at", "active", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["name", nil], ["username", nil], ["birth_date", nil], ["deleted_at", nil], ["active", true], ["email", "camilo1999gutierrestorres@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "0d5ae31d-4a7f-4938-a0e5-ec1ba72730d8"], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil]]
+  [1m[36mTRANSACTION (15.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 29.5ms | Allocations: 4683)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+actionpack (7.1.3.4) lib/action_dispatch/request/session.rb:260:in `load_for_write!'
+actionpack (7.1.3.4) lib/action_dispatch/request/session.rb:153:in `[]='
+warden (1.2.9) lib/warden/session_serializer.rb:27:in `store'
+warden (1.2.9) lib/warden/proxy.rb:187:in `set_user'
+devise (4.9.4) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise (4.9.4) app/controllers/devise/registrations_controller.rb:106:in `sign_up'
+devise (4.9.4) app/controllers/devise/registrations_controller.rb:24:in `create'
+actionpack (7.1.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.4) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/mapper.rb:21:in `block in <class:Constraints>'
+actionpack (7.1.3.4) lib/action_dispatch/routing/mapper.rb:51:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:882:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (3.1.6) lib/rack/builder.rb:277:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware.rb:22:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.6) lib/rack/etag.rb:29:in `call'
+rack (3.1.6) lib/rack/conditional_get.rb:43:in `call'
+rack (3.1.6) lib/rack/head.rb:15:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.6) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.6) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/sign_up" for ::1 at 2024-10-05 20:42:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorres@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorres@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 422 Unprocessable Content in 932ms (Views: 2.8ms | ActiveRecord: 26.6ms | Allocations: 276362)
+
+
+Started POST "/sign_up" for ::1 at 2024-10-05 20:42:16 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "birth_date", "deleted_at", "active", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"[0m  [["name", nil], ["username", nil], ["birth_date", nil], ["deleted_at", nil], ["active", true], ["email", "camilo1999gutierrestorres2@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "7318c7b9-c808-4204-a9d7-ab0b7c8df1cf"], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["failed_attempts", 0], ["unlock_token", "[FILTERED]"], ["locked_at", nil]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 270ms (ActiveRecord: 8.4ms | Allocations: 6212)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+actionpack (7.1.3.4) lib/action_dispatch/request/session.rb:260:in `load_for_write!'
+actionpack (7.1.3.4) lib/action_dispatch/request/session.rb:153:in `[]='
+warden (1.2.9) lib/warden/session_serializer.rb:27:in `store'
+warden (1.2.9) lib/warden/proxy.rb:187:in `set_user'
+devise (4.9.4) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise (4.9.4) app/controllers/devise/registrations_controller.rb:106:in `sign_up'
+devise (4.9.4) app/controllers/devise/registrations_controller.rb:24:in `create'
+actionpack (7.1.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.4) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.4) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.4) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.4) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.4) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.4) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.4) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/mapper.rb:21:in `block in <class:Constraints>'
+actionpack (7.1.3.4) lib/action_dispatch/routing/mapper.rb:51:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.4) lib/action_dispatch/routing/route_set.rb:882:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/token_dispatcher.rb:20:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware/revocation_manager.rb:21:in `call'
+rack (3.1.6) lib/rack/builder.rb:277:in `call'
+warden-jwt_auth (0.10.0) lib/warden/jwt_auth/middleware.rb:22:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.6) lib/rack/etag.rb:29:in `call'
+rack (3.1.6) lib/rack/conditional_get.rb:43:in `call'
+rack (3.1.6) lib/rack/head.rb:15:in `call'
+activerecord (7.1.3.4) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.4) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.4) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.1.6) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.1.6) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.4) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.1.3.4) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started POST "/sign_up" for ::1 at 2024-10-05 20:42:33 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 2979)
+
+
+Started POST "/sign_up" for ::1 at 2024-10-05 20:43:13 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.68ms)
+Completed 200 OK in 465ms (Views: 8.8ms | ActiveRecord: 11.5ms | Allocations: 17117)
+
+
+Started POST "/sign_up" for ::1 at 2024-10-05 20:43:19 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 246ms (Views: 0.6ms | ActiveRecord: 4.2ms | Allocations: 4041)
+
+
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 /* loading for pp */ LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 11]]
+Started POST "/sign_up" for ::1 at 2024-10-05 20:44:57 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 256ms (Views: 1.1ms | ActiveRecord: 6.0ms | Allocations: 15438)
+
+
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/sign_up" for ::1 at 2024-10-05 20:47:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.23ms)
+Completed 200 OK in 695ms (Views: 5.1ms | ActiveRecord: 17.0ms | Allocations: 275205)
+
+
+Started POST "/sign_up" for ::1 at 2024-10-05 20:47:34 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 356ms (Views: 1.0ms | ActiveRecord: 4.0ms | Allocations: 4102)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 /* loading for pp */ LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 11]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 /* loading for inspect */ LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 11]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 /* loading for inspect */ LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 11]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "camilo1999gutierrestorres2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/sign_up" for ::1 at 2024-10-05 21:04:31 -0500
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameters: :user, :registration. Context: { controller: RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007ff6e43b23f0>, params: {"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"registrations", "action"=>"create", "registration"=>{"user"=>{"email"=>"camilo1999gutierrestorres2@gmail.com", "password"=>"[FILTERED]"}}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:25:in `validate_new_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 422 Unprocessable Content in 30ms (Views: 1.2ms | ActiveRecord: 7.4ms | Allocations: 7935)
+
+
