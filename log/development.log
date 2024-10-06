@@ -28520,3 +28520,100 @@ Processing by Api::V1::ConversationsController#show as JSON
 Completed 200 OK in 24ms (Views: 8.0ms | ActiveRecord: 4.7ms | Allocations: 8493)
 
 
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (4.5ms)[0m  [1m[34mSELECT DISTINCT ON (user_id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 1], ["user_id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversationParticipant Load (1.2ms)[0m  [1m[34mSELECT DISTINCT ON (user_id) * FROM "conversation_participants" WHERE "conversation_participants"."conversation_id" IN (SELECT "conversations"."id" FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1) AND "conversation_participants"."user_id" != $2[0m  [["user_id", 18], ["user_id", 18]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 6], ["id", 14], ["id", 19]]
+  [1m[36mConversation Load (0.8ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for pp */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (1.0ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for pp */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.9ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.7ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.8ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.8ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.9ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for pp */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.7ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversationParticipant Load (0.6ms)[0m  [1m[34mSELECT "conversation_participants".* FROM "conversation_participants" WHERE "conversation_participants"."user_id" = $1 /* loading for pp */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.8ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for pp */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for pp */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mConversation Load (0.9ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.9ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+  [1m[36mConversation Load (0.9ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 18], ["LIMIT", 11]]
+Started GET "/cable" for 127.0.0.1 at 2024-10-06 14:51:56 -0500
+  
+NoMethodError (undefined method `before_action' for ApplicationCable::Connection:Class
+Did you mean?  before_command):
+  
+app/channels/application_cable/connection.rb:7:in `<class:Connection>'
+app/channels/application_cable/connection.rb:5:in `<module:ApplicationCable>'
+app/channels/application_cable/connection.rb:3:in `<main>'
+Started GET "/cable" for 127.0.0.1 at 2024-10-06 14:55:39 -0500
+  
+NoMethodError (undefined method `before_subscribe' for ApplicationCable::Connection:Class):
+  
+app/channels/application_cable/connection.rb:7:in `<class:Connection>'
+app/channels/application_cable/connection.rb:5:in `<module:ApplicationCable>'
+app/channels/application_cable/connection.rb:3:in `<main>'
+Started GET "/cable" for 127.0.0.1 at 2024-10-06 15:00:25 -0500
+  
+NoMethodError (undefined method `after_subscribe' for ApplicationCable::Connection:Class):
+  
+app/channels/application_cable/connection.rb:7:in `<class:Connection>'
+app/channels/application_cable/connection.rb:5:in `<module:ApplicationCable>'
+app/channels/application_cable/connection.rb:3:in `<main>'
+Started GET "/cable" for 127.0.0.1 at 2024-10-06 15:13:28 -0500
+Started GET "/cable" [WebSocket] for 127.0.0.1 at 2024-10-06 15:13:28 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:23:in `authenticate_user!'
+Registered connection (Z2lkOi8vY2hhdC1hcHAvVXNlci8xOA)
+  [1m[36mConversation Load (0.7ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" INNER JOIN "conversation_participants" ON "conversations"."id" = "conversation_participants"."conversation_id" WHERE "conversation_participants"."user_id" = $1[0m  [["user_id", 18]]
+  ↳ app/channels/conversations_channel.rb:17:in `create_channels'
+ConversationsChannel is streaming from conversation_2
+ConversationsChannel is streaming from conversation_5
+ConversationsChannel is streaming from conversation_3
+ConversationsChannel is transmitting the subscription confirmation
+ConversationsChannel is streaming from conversation_1
+Started POST "/api/v1/conversations/1/message" for ::1 at 2024-10-06 15:13:34 -0500
+Processing by Api::V1::MessagesController#new as JSON
+  Parameters: {"content"=>"My second new message from other account", "conversation_id"=>"1", "message"=>{"content"=>"My second new message from other account"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `authenticate_user!'
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:42:in `set_conversation'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "conversation_participants" ON "users"."id" = "conversation_participants"."user_id" WHERE "conversation_participants"."conversation_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["conversation_id", 1], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:28:in `validate_conversation_participant'
+[31mUnpermitted parameters: :format, :message. Context: { controller: Api::V1::MessagesController, action: new, request: #<ActionDispatch::Request:0x00007ff6e88d44b0>, params: {"content"=>"My second new message from other account", "format"=>"json", "controller"=>"api/v1/messages", "action"=>"new", "conversation_id"=>"1", "message"=>{"content"=>"My second new message from other account"}} }[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `create_new_message'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `create_new_message'
+  [1m[36mConversation Load (0.6ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `create_new_message'
+  [1m[36mMessage Create (5.6ms)[0m  [1m[32mINSERT INTO "messages" ("content", "deleted_at", "conversation_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["content", "My second new message from other account"], ["deleted_at", nil], ["conversation_id", 1], ["user_id", 18], ["created_at", "2024-10-06 20:13:34.401583"], ["updated_at", "2024-10-06 20:13:34.401583"]]
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `create_new_message'
+[ActionCable] Broadcasting to conversation_1: {"id"=>96, "content"=>"My second new message from other account", "deleted_at"=>nil, "conversation_id"=>1, "user_id"=>18, "created_at"=>"2024-10-06T20:13:34.401Z", "updated_at"=>"2024-10-06T20:13:34.401Z"}
+ConversationsChannel transmitting {"id"=>96, "content"=>"My second new message from other account", "deleted_at"=>nil, "conversation_id"=>1, "user_id"=>18, "created_at"=>"2024-10-06T20:13:34.401Z", "updated_at"=>"2024-10-06T20:13:34.401Z"} (via streamed from conversation_1)
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/messages_controller.rb:34:in `create_new_message'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.49ms)
+Completed 201 Created in 43ms (Views: 2.2ms | ActiveRecord: 17.2ms | Allocations: 17236)
+
+
+Finished "/cable" [WebSocket] for 127.0.0.1 at 2024-10-06 15:13:38 -0500
+ConversationsChannel stopped streaming from conversation_1
+ConversationsChannel stopped streaming from conversation_2
+ConversationsChannel stopped streaming from conversation_3
+ConversationsChannel stopped streaming from conversation_5
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
