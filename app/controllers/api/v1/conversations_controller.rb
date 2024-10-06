@@ -18,7 +18,8 @@ module Api
       end
 
       def show
-        render json: { success: true, conversations: current_user.conversations.map do |conversation|
+        conversations = current_user.conversations.includes(:users)
+        render json: { success: true, conversations: conversations.map do |conversation|
           ConversationSerializer.new(conversation, scope: current_user.id)
         end }
       rescue ActiveRecord::RecordNotFound => e
@@ -62,7 +63,9 @@ module Api
       end
 
       def set_conversation
-        @conversation = current_user.conversations.find_by(id: index_conversation_params[:conversation_id])
+        @conversation = current_user.conversations
+                                    .includes(:users)
+                                    .find_by(id: index_conversation_params[:conversation_id])
       end
 
       def set_recipient

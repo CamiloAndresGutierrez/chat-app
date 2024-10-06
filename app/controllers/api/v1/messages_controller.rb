@@ -7,10 +7,9 @@ module Api
       before_action :set_conversation
 
       def new
-        validate_conversation_participant!
+        validate_conversation_participant
 
-        create_new_message
-
+        new_message = create_new_message
         render json: { success: true, message: MessageSerializer.new(new_message) }, status: :created
       rescue ActiveRecord::RecordNotFound => e
         render json: { success: false, message: e.message }, status: :not_found
@@ -26,7 +25,7 @@ module Api
       private
 
       def validate_conversation_participant
-        return if @conversation.conversation_participants.find_by(user_id: current_user.id).blank?
+        return if @conversation.users.find_by!(id: current_user.id).present?
 
         raise 'User has no access to this conversation.'
       end
@@ -44,7 +43,7 @@ module Api
       end
 
       def message_params
-        params.require(
+        params.permit(
           :conversation_id,
           :content
         )
