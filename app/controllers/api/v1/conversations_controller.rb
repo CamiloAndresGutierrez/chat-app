@@ -49,15 +49,13 @@ module Api
           is_private: @recipient.present?
         )
 
-        new_conversation.conversation_participants.create!(
-          user: current_user
-        )
-
         add_participant(new_conversation, current_user)
-        add_participant(new_conversation, @recipient) if @recipient.present?
+        add_participant(new_conversation, @recipient)
       end
 
       def add_participant(conversation, participant)
+        return if participant.blank?
+
         conversation.conversation_participants.create!(
           user: participant
         )
