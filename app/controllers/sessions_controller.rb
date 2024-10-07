@@ -5,6 +5,15 @@ class SessionsController < Devise::SessionsController
   skip_before_action :authenticate_user!, only: %i[create destroy]
   respond_to :json
 
+  def create
+    user = User.find_for_database_authentication(email: params[:user][:email])
+    if user.nil? || !user.valid_password?(params[:user][:password])
+      render json: { error: 'Invalid email or password.' }, status: :unauthorized and return
+    end
+
+    super
+  end
+
   private
 
   def respond_with(current_user, _opts = {})

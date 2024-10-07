@@ -2,9 +2,9 @@
 
 # config/initializers/cors.rb
 
-Rails.application.config.middleware.insert_before 0, Rack::Cors do
+Rails.application.config.middleware.insert_before 0, Rack::Cors, debug: true do
   allow do
-    origins '*'
-    resource '*', headers: :any, methods: %i[get post patch put]
+    origins 'http://localhost:5173'
+    resource '*', headers: :any, methods: %i[get post delete put], credentials: true
   end
 end

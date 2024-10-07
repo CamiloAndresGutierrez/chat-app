@@ -28617,3 +28617,1418 @@ ConversationsChannel stopped streaming from conversation_5
 [dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
 [dotenv] Loaded [33m.env[0m
 [dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/login" for ::1 at 2024-10-06 19:05:21 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (5.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms | Allocations: 528)
+
+
+Started POST "/login" for ::1 at 2024-10-06 19:06:20 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Update All (7.8ms)[0m  [1m[33mUPDATE "users" SET "failed_attempts" = COALESCE("failed_attempts", 0) + $1 WHERE "users"."id" = $2[0m  [["failed_attempts", 1], ["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1376ms (ActiveRecord: 66.0ms | Allocations: 275366)
+
+
+Started POST "/login" for ::1 at 2024-10-06 19:06:31 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (3.6ms)[0m  [1m[33mUPDATE "users" SET "failed_attempts" = $1 WHERE "users"."id" = $2[0m  [["failed_attempts", 0], ["id", 1]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (4.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2 WHERE "users"."id" = $3[0m  [["sign_in_count", 2], ["current_sign_in_at", "2024-10-07 00:06:32.052655"], ["id", 1]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.77ms)
+Completed 200 OK in 331ms (Views: 11.4ms | ActiveRecord: 13.4ms | Allocations: 13701)
+
+
+Started POST "/login" for ::1 at 2024-10-06 19:06:39 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 213)
+
+
+Started POST "/login" for ::1 at 2024-10-06 19:13:43 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for ::1 at 2024-10-06 19:15:21 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 175)
+
+
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/login" for ::1 at 2024-10-06 19:19:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 524)
+
+
+Started POST "/login" for ::1 at 2024-10-06 19:24:25 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started POST "/login" for ::1 at 2024-10-06 19:25:44 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 175)
+
+
+Started POST "/login" for ::1 at 2024-10-06 19:26:19 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 175)
+
+
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/login" for ::1 at 2024-10-06 19:28:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 524)
+
+
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/login" for ::1 at 2024-10-06 20:27:35 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 524)
+
+
+Started POST "/login" for ::1 at 2024-10-06 20:27:37 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 215)
+
+
+Started POST "/login" for ::1 at 2024-10-06 20:27:43 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 175)
+
+
+Started POST "/login" for ::1 at 2024-10-06 20:28:22 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 175)
+
+
+Started POST "/login" for ::1 at 2024-10-06 20:30:42 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 175)
+
+
+Started POST "/login" for ::1 at 2024-10-06 20:32:58 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 20:46:46 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 20:47:10 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 20:48:17 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 20:49:08 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 21:01:13 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:03:38 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 212)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:04:50 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:05:42 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:07:58 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:08:13 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:10:55 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for ::1 at 2024-10-06 21:12:22 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"caimlo@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"caimlo@test.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started GET "/login" for ::1 at 2024-10-06 21:12:25 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started POST "/login" for ::1 at 2024-10-06 21:12:50 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"caimlo@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"caimlo@test.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 212)
+
+
+Started GET "/login" for ::1 at 2024-10-06 21:12:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started POST "/login" for ::1 at 2024-10-06 21:13:19 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for ::1 at 2024-10-06 21:13:41 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for ::1 at 2024-10-06 21:13:58 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"asc@tet.com", "password"=>"[FILTERED]", "session"=>{"email"=>"asc@tet.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:20:03 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:20:03 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:20:10 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"c@c.com", "password"=>"[FILTERED]", "session"=>{"email"=>"c@c.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:20:32 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"c@ca.com", "password"=>"[FILTERED]", "session"=>{"email"=>"c@ca.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:20:53 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"casdc@g.com", "password"=>"[FILTERED]", "session"=>{"email"=>"casdc@g.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:25:36 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"cascasdc@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"cascasdc@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 21:28:02 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 21:28:40 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 21:29:47 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 21:31:13 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 21:31:44 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 21:32:36 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 21:32:50 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 21:33:18 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 21:34:02 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:35:21 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2024-10-06 21:35:37 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/login"):
+  
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:50:14 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 21:50:50 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Incoming Headers:
+  Origin: http://localhost:5174
+  Path-Info: /login
+  Access-Control-Request-Method: POST
+  Access-Control-Request-Headers: content-type
+Preflight Headers:
+
+Incoming Headers:
+  Origin: http://localhost:5174
+  Path-Info: /login
+  Access-Control-Request-Method: POST
+  Access-Control-Request-Headers: content-type
+Preflight Headers:
+
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: POST
+  Access-Control-Request-Headers: content-type
+Preflight Headers:
+  access-control-allow-origin: http://localhost:5173
+  access-control-allow-methods: GET, POST, DELETE, PUT
+  access-control-expose-headers: 
+  access-control-max-age: 7200
+  access-control-allow-headers: content-type
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 21:57:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 524)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 21:59:38 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 215)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 21:59:46 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 175)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:00:29 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 379)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:01:38 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 0.0ms | Allocations: 1670)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:01:56 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 1023)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:02:04 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 317)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:02:56 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 1023)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:03:38 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 1023)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:05:24 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3467)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:05:38 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 401 Unauthorized in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 2957)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:06:04 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"camilo@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 401 Unauthorized in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 378)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:07:31 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 83ms (Views: 43.5ms | ActiveRecord: 38.7ms | Allocations: 16626)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200"}
+Started GET "/login" for ::1 at 2024-10-06 22:07:35 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:11:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 401 Unauthorized in 36ms (ActiveRecord: 12.0ms | Allocations: 10942)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:11:57 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.5ms | Allocations: 1130)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Started POST "/login" for ::1 at 2024-10-06 22:12:36 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mUser Update (8.8ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 3], ["current_sign_in_at", "2024-10-07 03:12:36.447053"], ["last_sign_in_at", "2024-10-07 00:06:32.052655"], ["id", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.72ms)
+Completed 200 OK in 435ms (Views: 8.5ms | ActiveRecord: 13.9ms | Allocations: 272446)
+
+
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:17:00 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "casdac@asc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.9ms | Allocations: 1126)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:18:26 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "casdac@asc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 401 Unauthorized in 36ms (ActiveRecord: 10.0ms | Allocations: 10951)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:20:26 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "casdac@asc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Completed 401 Unauthorized in 9ms (ActiveRecord: 3.6ms | Allocations: 3197)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Started POST "/login" for ::1 at 2024-10-06 22:24:00 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x000055971d8a3a68>
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 4], ["current_sign_in_at", "2024-10-07 03:24:01.281993"], ["last_sign_in_at", "2024-10-07 03:12:36.447053"], ["id", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.71ms)
+Completed 200 OK in 335ms (Views: 5.2ms | ActiveRecord: 8.9ms | Allocations: 268637)
+
+
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:24:05 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"casdac@asc.com", "password"=>"camilo19"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"casdac@asc.com", "password"=>"camilo19"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f404c0200d8>
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "casdac@asc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.5ms | Allocations: 1181)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Started GET "/login" for ::1 at 2024-10-06 22:24:06 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/rails/info/routes?query=w" for ::1 at 2024-10-06 22:24:08 -0500
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query"=>"w"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 19ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 22511)
+
+
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:24:13 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"casdac@asc.com", "password"=>"camilo19"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"casdac@asc.com", "password"=>"camilo19"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f40483b5f58>
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "casdac@asc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.5ms | Allocations: 1127)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:24:58 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"casdac@asc.com", "password"=>"camilo19"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"casdac@asc.com", "password"=>"camilo19"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f404c4b5c60 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for ::1>>
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "casdac@asc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 10ms (ActiveRecord: 3.8ms | Allocations: 3262)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:25:42 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"casdac@asc.com", "password"=>"camilo19"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"casdac@asc.com", "password"=>"camilo19"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f405008a920 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for ::1>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "casdac@asc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.3ms | Allocations: 994)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Started POST "/login" for ::1 at 2024-10-06 22:26:16 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f405425c650 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for ::1>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 5], ["current_sign_in_at", "2024-10-07 03:26:17.041164"], ["last_sign_in_at", "2024-10-07 03:24:01.281993"], ["id", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 246ms (Views: 1.3ms | ActiveRecord: 5.3ms | Allocations: 18093)
+
+
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: POST
+  Access-Control-Request-Headers: authorization,content-type
+Preflight Headers:
+  access-control-allow-origin: http://localhost:5173
+  access-control-allow-methods: GET, POST, DELETE, PUT
+  access-control-expose-headers: 
+  access-control-max-age: 7200
+  access-control-allow-credentials: true
+  access-control-allow-headers: authorization,content-type
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:28:09 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"casdac@asc.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"casdac@asc.com", "password"=>"camilo19"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"casdac@asc.com", "password"=>"camilo19"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f40483dd508 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for ::1>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "casdac@asc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.3ms | Allocations: 1179)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:29:41 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f404c51fb38 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.4ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:30:06 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f4050083968 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:30:09 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f40590440e8 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:30:09 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f4054430990 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.3ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:30:09 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f404c54d010 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.3ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:30:51 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f40500946f0 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.3ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:31:19 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f4059080430 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.3ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:32:50 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f405446a550 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.4ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:32:50 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f404841edc8 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.3ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:32:50 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f404c587648 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.3ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:32:50 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f40500cfed0 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.3ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:32:50 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f40590c4798 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.3ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:32:51 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f40544a4fe8 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:32:51 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f4048455850 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.3ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:32:51 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f404c5b60b0 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.3ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:32:51 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f4050246908 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.2ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:33:30 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x00007f405910a018 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 26ms (ActiveRecord: 0.3ms | Allocations: 995)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:33:49 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+Incoming params: #<ActionController::Parameters {"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}, "controller"=>"sessions", "action"=>"create", "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"test123"}}} permitted: false>
+Incoming headers: #<ActionDispatch::Http::Headers:0x000055971c8b04f8 @req=#<ActionDispatch::Request POST "http://localhost:3000/login" for 127.0.0.1>>
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.4ms | Allocations: 996)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:34:08 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 9ms (ActiveRecord: 3.5ms | Allocations: 3473)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:34:21 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 35ms (ActiveRecord: 10.2ms | Allocations: 11251)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:36:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 37ms (ActiveRecord: 11.3ms | Allocations: 11240)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:37:11 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.6ms | Allocations: 1432)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:37:36 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms | Allocations: 1238)
+
+
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:37:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 35ms (ActiveRecord: 10.3ms | Allocations: 11252)
+
+
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for 127.0.0.1 at 2024-10-06 22:37:57 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@test.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms | Allocations: 1436)
+
+
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: POST
+  Access-Control-Request-Headers: authorization,content-type
+Preflight Headers:
+
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: POST
+  Access-Control-Request-Headers: authorization,content-type
+Preflight Headers:
+
+[dotenv] Set [36mCHAT_APP_DATABASE_PASSWORD[0m, [36mCHAT_APP_DATABASE_USERNAME[0m, [36mCHAT_APP_DATABASE_DEVELOP[0m, [36mCHAT_APP_DATABASE_HOST[0m, [36mCHAT_APP_DATABASE_TEST[0m, [36mCHAT_APP_DATABASE_PASSWORD_TEST[0m, [36mCHAT_APP_DATABASE_USERNAME_TEST[0m, and [36mCHAT_APP_DATABASE_HOST_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: POST
+  Access-Control-Request-Headers: authorization,content-type
+Preflight Headers:
+  access-control-allow-origin: http://localhost:5173
+  access-control-allow-methods: GET, POST, DELETE, PUT
+  access-control-expose-headers: 
+  access-control-max-age: 7200
+  access-control-allow-credentials: true
+  access-control-allow-headers: authorization,content-type
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:40:51 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@test.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 35ms (ActiveRecord: 10.7ms | Allocations: 11251)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:41:25 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@test.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@test.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.4ms | Allocations: 1436)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: POST
+  Access-Control-Request-Headers: authorization,content-type
+Preflight Headers:
+  access-control-allow-origin: http://localhost:5173
+  access-control-allow-methods: GET, POST, DELETE, PUT
+  access-control-expose-headers: 
+  access-control-max-age: 7200
+  access-control-allow-credentials: true
+  access-control-allow-headers: authorization,content-type
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:41:32 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.4ms | Allocations: 1243)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:41:48 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.5ms | Allocations: 1243)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:41:56 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.9ms | Allocations: 1243)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:42:11 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.5ms | Allocations: 1228)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:43:27 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (2.1ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 6], ["current_sign_in_at", "2024-10-07 03:43:28.168662"], ["last_sign_in_at", "2024-10-07 03:26:17.041164"], ["id", 1]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.99ms)
+Completed 200 OK in 396ms (Views: 5.1ms | ActiveRecord: 5.7ms | Allocations: 273603)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:44:08 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@hotmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@hotmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@hotmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.8ms | Allocations: 1413)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Started POST "/login" for ::1 at 2024-10-06 22:44:54 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.7ms | Allocations: 1227)
+
+
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:47:12 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@hotmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@hotmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@hotmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 401 Unauthorized in 11ms (ActiveRecord: 4.1ms | Allocations: 3183)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:47:27 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@hotmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@hotmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@hotmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Completed 401 Unauthorized in 15ms (ActiveRecord: 7.8ms | Allocations: 3171)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:48:15 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@hotmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@hotmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@hotmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@hotmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 401 Unauthorized in 41ms (Views: 6.0ms | ActiveRecord: 5.6ms | Allocations: 6484)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:48:23 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@hotmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@hotmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@hotmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@hotmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 401 Unauthorized in 28ms (Views: 6.0ms | ActiveRecord: 8.4ms | Allocations: 6452)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:49:26 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@hotmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@hotmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@hotmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@hotmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 401 Unauthorized in 13ms (Views: 2.7ms | ActiveRecord: 3.7ms | Allocations: 6452)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:49:30 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:14:in `create'
+  [1m[36mUser Update (1.8ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 7], ["current_sign_in_at", "2024-10-07 03:49:30.538176"], ["last_sign_in_at", "2024-10-07 03:43:28.168662"], ["id", 1]]
+  ↳ app/controllers/sessions_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:14:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 522ms (Views: 0.7ms | ActiveRecord: 4.8ms | Allocations: 11627)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
+Incoming Headers:
+  Origin: http://localhost:5173
+  Path-Info: /login
+  Access-Control-Request-Method: 
+  Access-Control-Request-Headers: 
+Started POST "/login" for ::1 at 2024-10-06 22:50:08 -0500
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"camilo1999gutierrez@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "camilo1999gutierrez@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:14:in `create'
+  [1m[36mUser Update (1.8ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3 WHERE "users"."id" = $4[0m  [["sign_in_count", 8], ["current_sign_in_at", "2024-10-07 03:50:08.803176"], ["last_sign_in_at", "2024-10-07 03:49:30.538176"], ["id", 1]]
+  ↳ app/controllers/sessions_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:14:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 697ms (Views: 0.6ms | ActiveRecord: 5.4ms | Allocations: 4358)
+
+
+{"access-control-allow-origin"=>"http://localhost:5173", "access-control-allow-methods"=>"GET, POST, DELETE, PUT", "access-control-expose-headers"=>"", "access-control-max-age"=>"7200", "access-control-allow-credentials"=>"true"}
