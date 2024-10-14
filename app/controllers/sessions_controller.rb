@@ -7,6 +7,7 @@ class SessionsController < Devise::SessionsController
 
   def create
     user = User.find_for_database_authentication(email: params[:user][:email])
+
     if user.nil? || !user.valid_password?(params[:user][:password])
       render json: { error: 'Invalid email or password.' }, status: :unauthorized and return
     end
