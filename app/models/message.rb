@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Messages controller
 class Message < ApplicationRecord
   belongs_to :user
   belongs_to :conversation

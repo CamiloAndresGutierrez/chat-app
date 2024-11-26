@@ -1,26 +1,24 @@
 # frozen_string_literal: true
 
+# The application controller
 class ApplicationController < ActionController::API
   before_action :authenticate_user!
 
   private
 
   def authenticate_user!
-    token = extract_token_from_header
+    set_token
+    raise StandardError, 'Authorization token missing' unless @token
 
-    if token
-      payload = decode_jwt(token)
-      user_id = payload['sub']
-      @current_user = User.find_by(id: user_id)
+    decode_and_set_user
 
-      render_unauthorized('Invalid user') if @current_user.nil?
-    else
-      render_unauthorized('Authorization token missing')
-    end
+    raise StandardError, 'Invalid user' if @current_user.nil?
   rescue JWT::ExpiredSignature
     render_unauthorized('Token has expired')
   rescue JWT::DecodeError
     render_unauthorized('Invalid token')
+  rescue StandardError => e
+    render_unauthorized(e.message)
   end
 
   def extract_token_from_header
@@ -33,5 +31,15 @@ class ApplicationController < ActionController::API
 
   def render_unauthorized(message)
     render json: { error: message }, status: :unauthorized
+  end
+
+  def set_token
+    @token = extract_token_from_header
+  end
+
+  def decode_and_set_user
+    payload = decode_jwt(@token)
+    user_id = payload['sub']
+    @current_user = User.find_by(id: user_id)
   end
 end

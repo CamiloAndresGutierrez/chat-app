@@ -14,7 +14,7 @@ module ApplicationCable
     private
 
     def authenticate_user!
-      token = extract_token_from_header
+      token = extract_token_from_params
       reject_unauthorized_connection unless token
 
       payload = decode_jwt(token)
@@ -27,8 +27,8 @@ module ApplicationCable
       reject_unauthorized_connection
     end
 
-    def extract_token_from_header
-      request.headers['Authorization']&.split(' ')&.last
+    def extract_token_from_params
+      request.params['token']&.split(' ')&.last
     end
 
     def decode_jwt(token)

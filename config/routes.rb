@@ -18,6 +18,8 @@ Rails.application.routes.draw do
       get '/conversations/:conversation_id' => 'conversations#index'
       post '/conversations/:conversation_id/message' => 'messages#new'
       get '/conversations/:conversation_id/message' => 'messages#show'
+
+      get '/messages-list/:conversation_id' => 'messages#list'
     end
   end
 

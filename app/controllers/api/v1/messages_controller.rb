@@ -4,7 +4,9 @@ module Api
   module V1
     # Controller in charge of managing Messages data and logic
     class MessagesController < ApplicationController
-      before_action :set_conversation
+      include Pagination
+
+      before_action :set_conversation, except: :list
 
       def new
         validate_conversation_participant
@@ -22,7 +24,24 @@ module Api
         render json: { success: true, message: messages.map { |message| MessageSerializer.new(message) } }
       end
 
+      def list
+        render json: {
+          success: true,
+          data: contact_messages.then(&paginate),
+          meta: {
+            page: page_no,
+            per_page: per_page
+          }
+        }
+      end
+
       private
+
+      def contact_messages
+        current_user_conversations = Conversation.find(params[:conversation_id])
+
+        current_user_conversations.messages.order(created_at: :desc)
+      end
 
       def validate_conversation_participant
         return if @conversation.users.find_by!(id: current_user.id).present?
