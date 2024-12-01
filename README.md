@@ -1,24 +1,34 @@
-# README
+# Chat App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Prerequisites
 
-Things you may want to cover:
+The setups steps expect following tools installed on the system.
 
-* Ruby version
+- Github
+- Ruby 3.0.2
+- Rails 7.1.3.4
 
-* System dependencies
+##### 1. Check out the repository
 
-* Configuration
+```bash
+git clone git@github.com:CamiloAndresGutierrez/chat-app.git
+```
 
-* Database creation
+##### 2. Create and setup the database
 
-* Database initialization
+Run the following commands to create and setup the database.
 
-* How to run the test suite
+```ruby
+bundle exec rake db:create
+bundle exec rake db:setup
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+##### 3. Start the Rails server
 
-* Deployment instructions
+You can start the rails server using the command given below.
 
-* ...
+```ruby
+bundle exec rails s
+```
+
+And now you can visit the site with the URL http://localhost:3000
